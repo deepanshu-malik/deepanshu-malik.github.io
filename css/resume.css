@@ -551,7 +551,7 @@ a.contact-item:hover svg {
 
 .additional-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
 
@@ -875,4 +875,11 @@ a.contact-item:hover svg {
 .generating-pdf .project-link,
 .generating-pdf .project-tech {
     color: #64748b !important;
+}
+
+
+/* PDF Generation - disable ::before bullets */
+.pdf-li::before {
+    display: none !important;
+    content: none !important;
 }

@@ -8,8 +8,9 @@
 // ============================================
 
 const CONFIG = {
-    // API_URL: 'https://portfolio-backend.onrender.com/api', // Production
-    API_URL: 'http://localhost:8000/api', // Development
+    API_URL: window.location.hostname === 'localhost' 
+        ? 'http://localhost:8000/api' 
+        : 'https://portfolio-backend-deepanshu-malik.koyeb.app/api',
     SESSION_KEY: 'portfolio_chat_session',
     MAX_RETRIES: 3,
     RETRY_DELAY: 1000
@@ -42,6 +43,7 @@ function initChat() {
     const chatBtn = document.getElementById('chat-btn');
     const chatCtaBtn = document.getElementById('chat-cta-btn');
     const chatCloseBtn = document.getElementById('chat-close-btn');
+    const clearChatBtn = document.getElementById('clear-chat-btn');
     const chatWindow = document.getElementById('chat-window');
     const chatForm = document.getElementById('chat-form');
     const togglePanelBtn = document.getElementById('toggle-panel-btn');
@@ -62,6 +64,11 @@ function initChat() {
     // Close button
     if (chatCloseBtn) {
         chatCloseBtn.addEventListener('click', closeChat);
+    }
+
+    // Clear chat button
+    if (clearChatBtn) {
+        clearChatBtn.addEventListener('click', clearChatHistory);
     }
 
     // Form submission
@@ -153,6 +160,38 @@ function closeChat() {
     chatState.isOpen = false;
 }
 
+async function clearChatHistory() {
+    if (!confirm('Clear chat history? This will start a new conversation.')) {
+        return;
+    }
+
+    try {
+        // Call API to delete session
+        await fetch(`${CONFIG.API_URL}/chat/v2/session/${chatState.sessionId}`, {
+            method: 'DELETE'
+        });
+
+        // Clear local state
+        chatState.messages = [];
+        chatState.previousTopic = null;
+
+        // Clear UI - keep only welcome message
+        const messagesContainer = document.getElementById('chat-messages');
+        const welcomeMessage = messagesContainer.querySelector('.flex.gap-3');
+        messagesContainer.innerHTML = '';
+        if (welcomeMessage) {
+            messagesContainer.appendChild(welcomeMessage);
+        }
+
+        // Generate new session ID
+        initSessionId();
+
+    } catch (error) {
+        console.error('Error clearing chat:', error);
+        alert('Failed to clear chat history. Please try again.');
+    }
+}
+
 // Open chat with context (called from deep dive buttons)
 window.openChatWithContext = function(context, type) {
     openChat();
@@ -203,17 +242,7 @@ async function sendMessage(message) {
     chatState.isLoading = true;
 
     try {
-        const response = await callChatAPI(message);
-
-        // Remove typing indicator
-        hideTypingIndicator();
-
-        // Add bot response to UI
-        addMessageToUI(response.response, 'bot', response.suggestions, response.detail_panel);
-
-        // Update state
-        chatState.previousTopic = response.intent;
-
+        await streamChatResponse(message);
     } catch (error) {
         console.error('Chat error:', error);
         hideTypingIndicator();
@@ -223,9 +252,107 @@ async function sendMessage(message) {
     }
 }
 
+async function streamChatResponse(message) {
+    const response = await fetch(`${CONFIG.API_URL}/chat/v2/stream`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            message: message,
+            session_id: chatState.sessionId,
+            context: {
+                current_section: chatState.currentSection,
+                previous_topic: chatState.previousTopic
+            }
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    hideTypingIndicator();
+
+    // Create message container for streaming
+    const messagesContainer = document.getElementById('chat-messages');
+    const messageWrapper = document.createElement('div');
+    messageWrapper.className = 'flex gap-3';
+    
+    messageWrapper.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+        </div>
+        <div class="flex-1 max-w-[85%]">
+            <div class="message-bot px-4 py-3 text-sm streaming-content"></div>
+        </div>
+    `;
+    
+    messagesContainer.appendChild(messageWrapper);
+    const contentDiv = messageWrapper.querySelector('.streaming-content');
+
+    // Read stream
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let fullResponse = '';
+    let buffer = '';
+
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+            if (line.startsWith('data: ')) {
+                const data = line.slice(6);
+                if (data === '[DONE]') continue;
+                
+                fullResponse += data;
+                contentDiv.innerHTML = formatBotMessage(fullResponse);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+    }
+
+    // Get metadata from final response
+    try {
+        const metadataResponse = await fetch(`${CONFIG.API_URL}/chat/v2`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: '__GET_LAST_METADATA__',
+                session_id: chatState.sessionId
+            })
+        });
+        
+        if (metadataResponse.ok) {
+            const metadata = await metadataResponse.json();
+            
+            // Add sources and suggestions
+            const containerDiv = messageWrapper.querySelector('.flex-1');
+            if (metadata.sources) {
+                containerDiv.innerHTML += renderSources(metadata.sources);
+            }
+            if (metadata.suggestions) {
+                containerDiv.innerHTML += renderSuggestions(metadata.suggestions);
+                initSuggestionChips();
+            }
+            
+            chatState.previousTopic = metadata.intent;
+        }
+    } catch (e) {
+        console.warn('Could not fetch metadata:', e);
+    }
+}
+
 async function callChatAPI(message, retries = 0) {
     try {
-        const response = await fetch(`${CONFIG.API_URL}/chat`, {
+        const response = await fetch(`${CONFIG.API_URL}/chat/v2`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -259,7 +386,7 @@ async function callChatAPI(message, retries = 0) {
 // UI RENDERING
 // ============================================
 
-function addMessageToUI(content, type, suggestions = null, detailPanel = null) {
+function addMessageToUI(content, type, suggestions = null, detailPanel = null, sources = null) {
     const messagesContainer = document.getElementById('chat-messages');
 
     const messageWrapper = document.createElement('div');
@@ -288,6 +415,7 @@ function addMessageToUI(content, type, suggestions = null, detailPanel = null) {
                 <div class="message-bot px-4 py-3 text-sm">
                     ${formattedContent}
                 </div>
+                ${sources ? renderSources(sources) : ''}
                 ${suggestions ? renderSuggestions(suggestions) : ''}
             </div>
         `;
@@ -331,6 +459,25 @@ function formatBotMessage(content) {
     formatted = formatted.replace(/⚠️/g, '<span class="text-orange-500">⚠️</span>');
 
     return formatted;
+}
+
+function renderSources(sources) {
+    if (!sources || sources.length === 0) return '';
+
+    const uniqueSources = [...new Set(sources)];
+    const sourceTags = uniqueSources.map(s => {
+        const fileName = s.split('/').pop().replace('.md', '');
+        return `<span class="inline-block px-2 py-1 text-xs rounded bg-accent-primary/10 text-accent-primary border border-accent-primary/20">${escapeHtml(fileName)}</span>`;
+    }).join('');
+
+    return `
+        <div class="mt-2 pt-2 border-t border-white/5">
+            <span class="text-xs text-text-secondary">Sources: </span>
+            <div class="flex flex-wrap gap-1.5 mt-1">
+                ${sourceTags}
+            </div>
+        </div>
+    `;
 }
 
 function renderSuggestions(suggestions) {
@@ -377,7 +524,8 @@ async function handleSuggestionAction(action, target) {
         // Send as a question
         await sendMessage(`Tell me more about ${target.replace(/_/g, ' ')}`);
     } else if (action === 'compare') {
-        await sendMessage(`Compare ${target.replace(/_/g, ' ')}`);
+        // Fetch and display comparison table
+        await fetchDetailContent('compare', target);
     }
 }
 

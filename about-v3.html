@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Deepanshu Malik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16162a;
+            --text-primary: #ffffff;
+            --text-secondary: #abb2bf;
+            --text-muted: #607b96;
+            --accent: #c778dd;
+            --border: #3d3d5c;
+            --border-light: #2d2d4a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Fira Code', monospace; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 14px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border-light); z-index: 100; padding: 16px 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
+        .logo-icon { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+        .nav-links a .hash { color: var(--accent); }
+        .section-title { font-size: 28px; font-weight: 500; margin-bottom: 48px; display: flex; align-items: center; gap: 16px; }
+        .section-title .hash { color: var(--accent); }
+        .section-title::after { content: ''; flex: 1; max-width: 300px; height: 1px; background: var(--accent); opacity: 0.5; }
+        section { padding: 120px 0 80px; }
+        .about-content { max-width: 800px; }
+        .about-content p { color: var(--text-secondary); margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
+        .about-content strong { color: var(--accent); }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px 0; }
+        .stat-box { border: 1px solid var(--border); padding: 24px; text-align: center; }
+        .stat-value { font-size: 36px; font-weight: 600; color: var(--accent); }
+        .stat-label { color: var(--text-muted); font-size: 13px; margin-top: 8px; }
+        .timeline { margin-top: 48px; }
+        .timeline h3 { font-size: 20px; margin-bottom: 32px; }
+        .timeline h3 .hash { color: var(--accent); }
+        .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 32px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border-light); }
+        .timeline-item:last-child { border-bottom: none; }
+        .timeline-date { color: var(--text-muted); font-size: 13px; }
+        .timeline-content h4 { font-size: 16px; margin-bottom: 4px; }
+        .timeline-content .company { color: var(--accent); margin-bottom: 12px; }
+        .timeline-content p { color: var(--text-secondary); font-size: 14px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--text-primary); text-decoration: none; font-size: 14px; transition: all 0.2s; }
+        .btn:hover { background: var(--accent); color: var(--bg-primary); }
+        footer { padding: 32px 0; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); font-size: 13px; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-inner">
+            <a href="index-v3.html" class="logo"><span class="logo-icon">⬡</span><span>Deepanshu Malik</span></a>
+            <div class="nav-links">
+                <a href="index-v3.html"><span class="hash">#</span>home</a>
+                <a href="projects-v3.html"><span class="hash">#</span>projects</a>
+                <a href="about-v3.html" class="active"><span class="hash">#</span>about-me</a>
+                <a href="index-v3.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="resume-v3.html"><span class="hash">#</span>resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h1 class="section-title"><span class="hash">#</span>about-me</h1>
+            <div class="about-content" id="about-content"></div>
+            <div class="stats-grid" id="stats-grid"></div>
+            <div class="timeline">
+                <h3><span class="hash">#</span>experience</h3>
+                <div id="timeline"></div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="index-v3.html" class="btn">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer><div class="container"><p>© Copyright 2025. Made by Deepanshu Malik</p></div></footer>
+
+    <script>
+        Promise.all([
+            fetch('data/about-data.json').then(r => r.json()),
+            fetch('data/resume-data.json').then(r => r.json())
+        ]).then(([about, resume]) => {
+            // About content
+            document.getElementById('about-content').innerHTML = about.intro.paragraphs.map(p => 
+                `<p>${p.replace(/(\d\+|CKA|Kogta Financial|Generative AI)/g, '<strong>$1</strong>')}</p>`
+            ).join('');
+
+            // Stats
+            document.getElementById('stats-grid').innerHTML = about.stats.map(s => `
+                <div class="stat-box">
+                    <div class="stat-value">${s.value}</div>
+                    <div class="stat-label">${s.label}</div>
+                </div>
+            `).join('');
+
+            // Timeline from resume data
+            document.getElementById('timeline').innerHTML = resume.experience.map(exp => `
+                <div class="timeline-item">
+                    <div class="timeline-date">${exp.duration}</div>
+                    <div class="timeline-content">
+                        <h4>${exp.role}</h4>
+                        <div class="company">${exp.company}</div>
+                        <p>${exp.highlights.join('. ')}.</p>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>

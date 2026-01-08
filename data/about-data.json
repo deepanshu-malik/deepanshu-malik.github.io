@@ -1,0 +1,22 @@
+{
+  "intro": {
+    "greeting": "Hello, I'm Deepanshu Malik!",
+    "paragraphs": [
+      "I'm a Senior Backend Engineer based in India with a passion for building robust, scalable systems that solve real-world problems.",
+      "With 4+ years of experience in fintech backend development, I've architected and built production microservices from the ground up. Currently at Kogta Financial, I lead backend development initiatives and work closely with leadership to translate complex product requirements into scalable solutions.",
+      "My journey in tech started with a curiosity about how large-scale systems work. This led me through various roles where I've built everything from B2B marketplace backends to enterprise communication platforms handling millions of messages.",
+      "I'm a Certified Kubernetes Administrator (CKA), which reflects my commitment to understanding infrastructure deeply. I believe that great backend engineers should understand not just the code they write, but the entire ecosystem it runs in.",
+      "Currently, I'm exploring the intersection of backend engineering and Generative AI. I'm fascinated by how LLMs can be integrated into production systems, and I've been building RAG pipelines, working with vector databases, and experimenting with prompt engineering techniques."
+    ]
+  },
+  "stats": [
+    { "value": "4+", "label": "Years Experience" },
+    { "value": "5+", "label": "Microservices Built" },
+    { "value": "CKA", "label": "Kubernetes Certified" }
+  ],
+  "availability": {
+    "status": "Open to opportunities",
+    "interests": ["GenAI tooling", "Backend infrastructure", "Fintech projects"],
+    "workPreference": "Remote and hybrid"
+  }
+}

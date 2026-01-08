@@ -213,10 +213,10 @@
                     <svg class="w-5 h-5 text-accent-tertiary group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     <span>Resume</span>
                 </a>
-                <button id="chat-cta-btn" class="group flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary hover:opacity-90 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-primary/25">
+                <a href="/chat.html" class="group flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary hover:opacity-90 text-white font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent-primary/25">
                     <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                     <span>Chat with AI</span>
-                </button>
+                </a>
             </div>
 
             <!-- Scroll Indicator -->
@@ -364,9 +364,11 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-badge skill-badge-tertiary">OpenAI API</span>
-                        <span class="skill-badge skill-badge-tertiary">RAG</span>
+                        <span class="skill-badge skill-badge-tertiary">RAG Pipelines</span>
                         <span class="skill-badge skill-badge-tertiary">ChromaDB</span>
-                        <span class="skill-badge skill-badge-tertiary">Embeddings</span>
+                        <span class="skill-badge skill-badge-tertiary">Hybrid Search</span>
+                        <span class="skill-badge skill-badge-tertiary">LLM Reranking</span>
+                        <span class="skill-badge skill-badge-tertiary">Token Management</span>
                         <span class="skill-badge skill-badge-tertiary">Prompt Engineering</span>
                     </div>
                 </div>
@@ -381,9 +383,10 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-badge skill-badge-primary">MongoDB</span>
+                        <span class="skill-badge skill-badge-primary">Beanie ODM</span>
                         <span class="skill-badge skill-badge-primary">MySQL</span>
                         <span class="skill-badge skill-badge-primary">OpenSearch</span>
-                        <span class="skill-badge skill-badge-primary">Elasticsearch</span>
+                        <span class="skill-badge skill-badge-primary">Redis</span>
                     </div>
                 </div>
 
@@ -439,7 +442,7 @@
 
             <!-- GitHub Projects -->
             <div id="github-projects" class="project-content grid gap-6">
-                <!-- genai-sandbox -->
+                <!-- Portfolio AI Backend (Main GenAI Showcase) -->
                 <div class="glass-card rounded-2xl p-6 md:p-8 section-reveal hover:border-accent-primary/50 transition-all duration-300 group">
                     <div class="flex flex-col md:flex-row gap-6">
                         <!-- Project Icon -->
@@ -449,20 +452,82 @@
 
                         <!-- Project Info -->
                         <div class="flex-grow">
-                            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent-primary transition-colors">genai-sandbox</h3>
+                            <div class="flex items-center gap-3 mb-3">
+                                <h3 class="font-heading font-bold text-xl md:text-2xl group-hover:text-accent-primary transition-colors">Portfolio AI Backend</h3>
+                                <span class="px-2 py-1 rounded text-xs bg-accent-primary/20 text-accent-primary border border-accent-primary/30">Featured</span>
+                            </div>
                             <p class="text-text-secondary mb-4">
-                                My GenAI learning lab with production-ready implementations. Features RAG pipeline with ChromaDB, async LLM calls with rate limiting, document Q&A CLI tool, and various chunking strategies.
+                                Production-grade RAG chatbot powering this portfolio. Features advanced GenAI patterns including LLM-based intent classification, hybrid retrieval (semantic + BM25), LLM reranking, and token-managed context windows.
                             </p>
 
                             <!-- Features -->
                             <ul class="text-text-secondary mb-4 space-y-1">
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    RAG pipeline with ChromaDB vector storage
+                                    LLM intent classification with 8 intent types
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                    Async LLM calls with rate limiting and retry patterns
+                                    Hybrid retrieval: 70% semantic + 30% keyword (BM25)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Token management with tiktoken & cost tracking
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    LangChain integration with custom callbacks
+                                </li>
+                            </ul>
+
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">FastAPI</span>
+                                <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">OpenAI API</span>
+                                <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">ChromaDB</span>
+                                <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">LangChain</span>
+                                <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">tiktoken</span>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex flex-wrap gap-3">
+                                <a href="https://github.com/deepanshu-malik/portfolio-ai-backend" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-tertiary hover:bg-accent-primary/20 border border-white/10 hover:border-accent-primary/50 transition-all duration-300">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                    View Code
+                                </a>
+                                <button class="deep-dive-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary text-white hover:opacity-90 transition-all duration-300" data-project="portfolio-ai-backend">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                                    Deep Dive
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- genai-sandbox -->
+                <div class="glass-card rounded-2xl p-6 md:p-8 section-reveal hover:border-accent-secondary/50 transition-all duration-300 group">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <!-- Project Icon -->
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-accent-secondary/20 to-accent-tertiary/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                        </div>
+
+                        <!-- Project Info -->
+                        <div class="flex-grow">
+                            <h3 class="font-heading font-bold text-xl md:text-2xl mb-3 group-hover:text-accent-secondary transition-colors">GenAI Sandbox</h3>
+                            <p class="text-text-secondary mb-4">
+                                My GenAI learning lab for experimenting with LLM patterns. Focused on exploring chunking strategies, embedding comparisons, and prompt engineering techniques before applying them to production projects.
+                            </p>
+
+                            <!-- Features -->
+                            <ul class="text-text-secondary mb-4 space-y-1">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Multiple chunking strategies comparison
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Async LLM calls with rate limiting patterns
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-accent-tertiary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -480,11 +545,11 @@
 
                             <!-- Actions -->
                             <div class="flex flex-wrap gap-3">
-                                <a href="https://github.com/deepanshu-malik/genai-sandbox" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-tertiary hover:bg-accent-primary/20 border border-white/10 hover:border-accent-primary/50 transition-all duration-300">
+                                <a href="https://github.com/deepanshu-malik/genai-sandbox" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-bg-tertiary hover:bg-accent-secondary/20 border border-white/10 hover:border-accent-secondary/50 transition-all duration-300">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                                     View Code
                                 </a>
-                                <button class="deep-dive-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-accent-primary to-accent-secondary text-white hover:opacity-90 transition-all duration-300" data-project="genai-sandbox">
+                                <button class="deep-dive-btn inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-accent-secondary text-accent-secondary hover:bg-accent-secondary hover:text-white transition-all duration-300" data-project="genai-sandbox">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
                                     Deep Dive
                                 </button>
@@ -503,12 +568,12 @@
                     </div>
                     <h3 class="font-heading font-bold text-xl mb-3 group-hover:text-accent-secondary transition-colors">Multi-Channel Communication Platform</h3>
                     <p class="text-text-secondary mb-4">
-                        High-volume messaging system handling WhatsApp, SMS, and RCS. Processes thousands of messages daily with real-time delivery tracking.
+                        High-volume messaging system handling WhatsApp, SMS, and RCS with real-time webhook callbacks, idempotent processing, and batch operations across multiple business verticals.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">FastAPI</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">Beanie ODM</span>
                         <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">MongoDB</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">SQS</span>
                         <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">OpenSearch</span>
                     </div>
                     <button class="deep-dive-btn inline-flex items-center gap-2 text-accent-secondary hover:text-accent-primary transition-colors" data-project="communication-platform">
@@ -524,13 +589,13 @@
                     </div>
                     <h3 class="font-heading font-bold text-xl mb-3 group-hover:text-accent-tertiary transition-colors">Automated Document Dispatch</h3>
                     <p class="text-text-secondary mb-4">
-                        Cron-based system dispatching 10,000+ loan welcome letters monthly. Deployed on EKS with full CI/CD automation.
+                        SQS-driven system dispatching 10,000+ loan welcome letters monthly with parallel PDF generation, multi-language templates, and exponential backoff retry mechanisms.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">FastAPI</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">SQS</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">AWS SQS</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">WeasyPrint</span>
                         <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">EKS</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-bg-tertiary text-text-secondary border border-white/10">Jenkins</span>
                     </div>
                     <button class="deep-dive-btn inline-flex items-center gap-2 text-accent-tertiary hover:text-accent-primary transition-colors" data-project="document-dispatch">
                         <span>Deep Dive</span>
@@ -734,15 +799,10 @@
     <!-- Chat Widget -->
     <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
         <!-- Chat Button -->
-        <button id="chat-btn" class="w-14 h-14 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-pulse-glow">
-            <svg id="chat-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-            <svg id="close-icon" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-
-        <!-- Chat Window -->
-        <div id="chat-window" class="hidden fixed bottom-24 right-6 w-[95vw] md:w-[800px] h-[70vh] md:h-[600px] max-h-[70vh] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-bg-secondary/95 backdrop-blur-xl flex flex-col md:flex-row">
-
-            <!-- Chat Panel -->
+        <a href="/chat.html" class="w-14 h-14 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-pulse-glow">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </a>
+    </div>
             <div class="flex-1 flex flex-col min-w-0">
                 <!-- Chat Header -->
                 <div class="px-4 py-3 bg-gradient-to-r from-accent-primary/20 to-accent-secondary/20 border-b border-white/10 flex items-center justify-between flex-shrink-0">
@@ -756,6 +816,9 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
+                        <button id="clear-chat-btn" class="p-2 rounded-lg hover:bg-white/10 transition-colors" title="Clear Chat History">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
                         <button id="toggle-panel-btn" class="p-2 rounded-lg hover:bg-white/10 transition-colors hidden md:block" title="Toggle Detail Panel">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
                         </button>
