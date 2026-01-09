@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepanshu Malik | Senior Backend Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
     <style>
         :root {
             --bg-primary: #1a1a2e;
@@ -156,19 +156,12 @@
         .hero-image {
             position: relative;
             display: flex;
-            justify-content: center;
-        }
-        
-        .hero-image img {
-            max-width: 300px;
-            filter: grayscale(100%);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
         }
         
         .status-badge {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
             background: var(--bg-primary);
             border: 1px solid var(--border);
             padding: 8px 16px;
@@ -183,38 +176,165 @@
             background: var(--accent);
             border-radius: 50%;
         }
-        
-        /* Quote */
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .tech-stack-label {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+        .tech-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            opacity: 0.7;
+        }
+        .tech-icon:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .tech-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Terminal */
+        .terminal {
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 420px;
+        }
+        .terminal-header {
+            background: #161b22;
+            padding: 8px 12px;
+            display: flex;
+            gap: 6px;
+        }
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+        .terminal-body {
+            padding: 16px;
+            line-height: 1.6;
+        }
+        .terminal-line {
+            margin-bottom: 4px;
+        }
+        .terminal-prompt { color: #7ee787; }
+        .terminal-cmd { color: #e6edf3; }
+        .terminal-comment { color: #8b949e; }
+        .terminal-string { color: #a5d6ff; }
+        .terminal-keyword { color: #ff7b72; }
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: var(--accent);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Experience Timeline */
+        .experience-timeline {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--border);
+        }
+        .exp-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+        .exp-item:last-child { margin-bottom: 0; }
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .exp-title { font-size: 16px; font-weight: 600; }
+        .exp-company { color: var(--accent); }
+        .exp-date { color: var(--text-muted); font-size: 13px; }
+        .exp-highlight { color: var(--text-secondary); font-size: 14px; margin-top: 8px; }
+        .exp-highlight strong { color: var(--text-primary); }
+
+        /* Quote Carousel */
         .quote-section {
             padding: 60px 0;
+            overflow: hidden;
+        }
+        
+        .quotes-track {
+            display: flex;
+            animation: scroll-quotes 40s linear infinite;
+            width: max-content;
+        }
+        
+        .quotes-track:hover {
+            animation-play-state: paused;
         }
         
         .quote-box {
             border: 1px solid var(--border);
-            padding: 32px;
+            padding: 24px 32px;
             position: relative;
-            max-width: 600px;
-            margin: 0 auto;
+            min-width: 500px;
+            max-width: 500px;
+            margin: 0 24px;
+            flex-shrink: 0;
         }
-        
-        .quote-mark {
-            position: absolute;
-            font-size: 48px;
-            color: var(--text-muted);
-            font-family: Georgia, serif;
-        }
-        .quote-mark.open { top: -20px; left: 16px; }
-        .quote-mark.close { bottom: -40px; right: 16px; }
         
         .quote-text {
-            font-size: 20px;
+            font-size: 18px;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
+            font-style: italic;
         }
         
         .quote-author {
             text-align: right;
             color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        @keyframes scroll-quotes {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         
         /* Projects */
@@ -643,20 +763,40 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <h1>Deepanshu is a <span class="highlight">backend engineer</span> and <span class="highlight">GenAI developer</span></h1>
+                    <h1>Deepanshu is a <span class="highlight">Backend Engineer</span> and <span class="highlight">GenAI Developer</span></h1>
                     <p>He builds cloud-native microservices and LLM-powered applications with Python, FastAPI, and Kubernetes</p>
                     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                         <button class="btn" onclick="openChat()">Chat with AI →</button>
                         <a href="resume-v3.html" class="btn">Resume →</a>
                     </div>
+                    <div class="tech-stack">
+                        <span class="tech-stack-label">Tech Stack |</span>
+                        <div class="tech-icon" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+                        <div class="tech-icon" title="FastAPI"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"></div>
+                        <div class="tech-icon" title="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></div>
+                        <div class="tech-icon" title="Kubernetes"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"></div>
+                        <div class="tech-icon" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div>
+                        <div class="tech-icon" title="OpenAI"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" alt="OpenAI" style="filter: invert(1);"></div>
+                    </div>
                 </div>
                 <div class="hero-image">
-                    <div class="dots" style="position: absolute; top: 0; right: 0;">
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line"><span class="terminal-comment"># Building RAG pipeline</span></div>
+                            <div class="terminal-line"><span class="terminal-keyword">from</span> <span class="terminal-cmd">langchain</span> <span class="terminal-keyword">import</span> <span class="terminal-cmd">ChatOpenAI</span></div>
+                            <div class="terminal-line"><span class="terminal-keyword">from</span> <span class="terminal-cmd">chromadb</span> <span class="terminal-keyword">import</span> <span class="terminal-cmd">Client</span></div>
+                            <div class="terminal-line"></div>
+                            <div class="terminal-line"><span class="terminal-cmd">llm</span> = <span class="terminal-cmd">ChatOpenAI</span>(<span class="terminal-string">"gpt-4o-mini"</span>)</div>
+                            <div class="terminal-line"><span class="terminal-cmd">db</span> = <span class="terminal-cmd">Client</span>().<span class="terminal-cmd">get_collection</span>()</div>
+                            <div class="terminal-line"></div>
+                            <div class="terminal-line"><span class="terminal-prompt">>>> </span><span class="terminal-cmd">response</span> = <span class="terminal-cmd">rag_query</span>(<span class="terminal-string">"skills"</span>)<span class="typing-cursor"></span></div>
+                        </div>
                     </div>
-                    <img src="assets/images/profile.png" alt="Deepanshu" onerror="this.style.display='none'">
                     <div class="status-badge">
                         <span class="dot"></span>
                         Currently working on <strong style="color: var(--accent);">GenAI Projects</strong>
@@ -668,12 +808,39 @@
 
     <!-- Quote -->
     <section class="quote-section">
-        <div class="container">
+        <div class="quotes-track">
             <div class="quote-box">
-                <span class="quote-mark open">"</span>
-                <p class="quote-text">With great power comes great electricity bill</p>
-                <p class="quote-author">- Dr. Who</p>
-                <span class="quote-mark close">"</span>
+                <p class="quote-text">"Readability counts."</p>
+                <p class="quote-author">- The Zen of Python</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"Simple is better than complex."</p>
+                <p class="quote-author">- The Zen of Python</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"Code is read more often than it is written."</p>
+                <p class="quote-author">- Guido van Rossum</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"The best code is no code at all."</p>
+                <p class="quote-author">- Jeff Atwood</p>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="quote-box">
+                <p class="quote-text">"Readability counts."</p>
+                <p class="quote-author">- The Zen of Python</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"Simple is better than complex."</p>
+                <p class="quote-author">- The Zen of Python</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"Code is read more often than it is written."</p>
+                <p class="quote-author">- Guido van Rossum</p>
+            </div>
+            <div class="quote-box">
+                <p class="quote-text">"The best code is no code at all."</p>
+                <p class="quote-author">- Jeff Atwood</p>
             </div>
         </div>
     </section>
@@ -731,8 +898,60 @@
         </div>
     </section>
 
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="projects-header">
+                <h2 class="section-title"><span class="hash">#</span>experience</h2>
+                <a href="resume-v3.html" class="view-all">View full resume →</a>
+            </div>
+            <div class="experience-timeline">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Senior Software Engineer</span>
+                            <span class="exp-company"> @ KOGTA Financial</span>
+                        </div>
+                        <span class="exp-date">Mar 2025 - Present</span>
+                    </div>
+                    <p class="exp-highlight">Built <strong>5+ microservices</strong> and multi-channel communication platform handling WhatsApp, SMS, RCS at scale</p>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Software Developer</span>
+                            <span class="exp-company"> @ Capri Global Capital</span>
+                        </div>
+                        <span class="exp-date">Jul 2024 - Mar 2025</span>
+                    </div>
+                    <p class="exp-highlight">Revamped loan APIs achieving <strong>25% throughput increase</strong> for 15K+ daily requests</p>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Member of Technical Staff</span>
+                            <span class="exp-company"> @ VoerEir AB</span>
+                        </div>
+                        <span class="exp-date">May 2022 - Mar 2024</span>
+                    </div>
+                    <p class="exp-highlight">Developed Python scripts for <strong>Kubernetes monitoring</strong> and Flask APIs for telecom cloud testing</p>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div>
+                            <span class="exp-title">Software Developer</span>
+                            <span class="exp-company"> @ TradeIndia.com</span>
+                        </div>
+                        <span class="exp-date">Apr 2021 - May 2022</span>
+                    </div>
+                    <p class="exp-highlight">Built RESTful APIs and Elasticsearch queries achieving <strong>95% code coverage</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About -->
-    <section id="about">
+    <section id="about" style="background: var(--bg-secondary);">
         <div class="container">
             <h2 class="section-title"><span class="hash">#</span>about-me</h2>
             <div class="about-grid">
@@ -754,7 +973,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" style="background: var(--bg-secondary);">
+    <section id="contact">
         <div class="container">
             <h2 class="section-title"><span class="hash">#</span>contacts</h2>
             <div class="contact-grid">
@@ -838,7 +1057,7 @@
                     grid.innerHTML = data.projects.slice(0, 3).map(p => `
                         <div class="project-card">
                             <div class="project-image" style="background: ${p.gradient};">
-                                <span style="font-size: 48px;">${p.icon}</span>
+                                ${p.icon}
                             </div>
                             <div class="project-tech">${p.tech.slice(0, 4).join(' ')}</div>
                             <div class="project-content">
@@ -848,7 +1067,6 @@
                                     ${p.live ? `<a href="javascript:void(0)" onclick="openChat()" class="project-link">Live ↗</a>` : ''}
                                     ${p.github ? `<a href="${p.github}" target="_blank" class="project-link">GitHub ↗</a>` : ''}
                                     ${!p.live && !p.github ? `<a href="projects-v3.html#${p.id}" class="project-link">Details ↗</a>` : ''}
-                                    ${p.live && p.github ? '' : !p.live ? `<a href="projects-v3.html#${p.id}" class="project-link">Details ↗</a>` : ''}
                                 </div>
                             </div>
                         </div>
@@ -857,10 +1075,12 @@
             });
 
         // Check if we should open chat (from projects page)
-        if (localStorage.getItem('openChat')) {
-            localStorage.removeItem('openChat');
-            setTimeout(() => openChat(), 500);
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('openChat')) {
+                localStorage.removeItem('openChat');
+                setTimeout(() => openChat(), 300);
+            }
+        });
 
         function openChat() {
             document.getElementById('chat-modal').classList.add('open');
@@ -914,13 +1134,13 @@
                             const data = line.slice(6);
                             if (data === '[DONE]') continue;
                             fullText += data;
-                            botDiv.innerHTML = marked.parse(fullText) + '<span class="typing-cursor"></span>';
+                            botDiv.innerHTML = parseMarkdown(fullText) + '<span class="typing-cursor"></span>';
                             scrollChat();
                         }
                     }
                 }
                 
-                botDiv.innerHTML = marked.parse(fullText);
+                botDiv.innerHTML = parseMarkdown(fullText);
                 
             } catch (error) {
                 botDiv.textContent = 'Sorry, something went wrong. Please try again.';
@@ -937,7 +1157,7 @@
             if (type === 'user') {
                 div.innerHTML = `<span class="bubble">${escapeHtml(text)}</span>`;
             } else {
-                div.innerHTML = marked.parse(text);
+                div.innerHTML = parseMarkdown(text);
             }
             container.appendChild(div);
             scrollChat();
@@ -964,7 +1184,34 @@
             return div.innerHTML;
         }
 
-        marked.setOptions({ breaks: true, gfm: true });
+        // Configure marked for markdown parsing
+        if (typeof marked !== 'undefined') {
+            marked.setOptions({ breaks: true, gfm: true });
+        }
+        
+        function parseMarkdown(text) {
+            // Pre-process: add newline before ### if missing
+            text = text.replace(/([^\n])###/g, '$1\n\n###');
+            text = text.replace(/([^\n])##/g, '$1\n\n##');
+            
+            if (typeof marked !== 'undefined' && marked.parse) {
+                try {
+                    return marked.parse(text);
+                } catch(e) {
+                    console.error('Marked parse error:', e);
+                }
+            }
+            // Fallback: basic markdown conversion
+            return text
+                .replace(/### (.+)/g, '<h3>$1</h3>')
+                .replace(/## (.+)/g, '<h2>$1</h2>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/^- (.+)$/gm, '<li>$1</li>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/\n/g, '<br>')
+                .replace(/^/, '<p>')
+                .replace(/$/, '</p>');
+        }
     </script>
 
 </body>
