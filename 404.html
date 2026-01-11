@@ -10,19 +10,18 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-tertiary: #06b6d4;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16162a;
+            --bg-card: #1e1e3f;
+            --text-primary: #ffffff;
+            --text-secondary: #abb2bf;
+            --text-muted: #607b96;
+            --accent: #c778dd;
+            --border: #3d3d5c;
         }
 
         * {
@@ -32,113 +31,148 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Fira Code', monospace;
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            line-height: 1.6;
+            font-size: 14px;
         }
 
         .container {
             text-align: center;
             padding: 2rem;
-            position: relative;
-            z-index: 10;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 32px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            color: var(--accent);
+            font-size: 24px;
         }
 
         .error-code {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(8rem, 25vw, 15rem);
+            font-size: clamp(6rem, 20vw, 10rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--accent);
             line-height: 1;
-            margin-bottom: 1rem;
-            animation: float 3s ease-in-out infinite;
-            text-shadow: 0 0 80px rgba(99, 102, 241, 0.3);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            margin-bottom: 24px;
+            text-shadow: 0 0 40px rgba(199, 120, 221, 0.3);
         }
 
         .error-title {
-            font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
             color: var(--text-primary);
         }
 
         .error-message {
-            font-size: 1rem;
+            font-size: 14px;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            margin-bottom: 32px;
+            line-height: 1.8;
         }
 
-        .code-block {
-            background: var(--bg-secondary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 400px;
+        .terminal {
+            background: #0d1117;
+            border: 1px solid var(--border);
             text-align: left;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.875rem;
+            margin: 32px auto;
+            max-width: 500px;
+            overflow: hidden;
         }
 
-        .code-block .comment {
-            color: #6b7280;
+        .terminal-header {
+            background: #161b22;
+            padding: 8px 12px;
+            display: flex;
+            gap: 6px;
         }
 
-        .code-block .keyword {
-            color: var(--accent-secondary);
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
         }
 
-        .code-block .string {
-            color: #34d399;
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27ca40; }
+
+        .terminal-body {
+            padding: 20px;
+            font-size: 13px;
+            line-height: 1.8;
         }
 
-        .code-block .function {
-            color: var(--accent-tertiary);
+        .terminal-line {
+            margin-bottom: 4px;
         }
 
-        .btn-home {
+        .terminal-prompt { color: #7ee787; }
+        .terminal-error { color: #ff7b72; }
+        .terminal-comment { color: #8b949e; }
+        .terminal-string { color: #a5d6ff; }
+
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 2rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 1px solid var(--accent);
+            color: var(--text-primary);
             text-decoration: none;
-            border-radius: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+            font-size: 14px;
+            transition: all 0.2s;
+            background: transparent;
+            font-family: inherit;
+            margin-top: 16px;
         }
 
-        .btn-home:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg-primary);
         }
 
-        .btn-home svg {
-            width: 20px;
-            height: 20px;
+        .links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
         }
 
-        /* Background animation */
+        .link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .link:hover {
+            color: var(--text-primary);
+        }
+
+        .link .hash {
+            color: var(--accent);
+        }
+
+        /* Background grid */
         .bg-grid {
             position: fixed;
             top: 0;
@@ -146,93 +180,63 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(199, 120, 221, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(199, 120, 221, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
-            z-index: 1;
+            z-index: -1;
         }
 
-        .bg-glow {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 2;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        .bg-glow-1 {
-            top: -200px;
-            right: -200px;
-        }
-
-        .bg-glow-2 {
-            bottom: -200px;
-            left: -200px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            animation-delay: 2s;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        .links {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
-        }
-
-        .link:hover {
-            color: var(--accent-primary);
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .links {
+                gap: 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Background Effects -->
+    <!-- Background Grid -->
     <div class="bg-grid"></div>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
 
     <div class="container">
+        <div class="logo">
+            <span class="logo-icon">⬡</span>
+            <span>Deepanshu Malik</span>
+        </div>
+
         <div class="error-code">404</div>
         <h1 class="error-title">Page Not Found</h1>
         <p class="error-message">
-            Looks like you've ventured into uncharted territory.
             The page you're looking for doesn't exist or has been moved.
         </p>
 
-        <div class="code-block">
-            <span class="comment">// Looks like this route is undefined</span><br>
-            <span class="keyword">const</span> page = <span class="function">findPage</span>(<span class="string">"/your-path"</span>);<br>
-            <span class="keyword">if</span> (!page) {<br>
-            &nbsp;&nbsp;<span class="function">redirect</span>(<span class="string">"/"</span>); <span class="comment">// Go home</span><br>
-            }
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line"><span class="terminal-prompt">$</span> cd /your-path</div>
+                <div class="terminal-line"><span class="terminal-error">Error:</span> <span class="terminal-string">No such file or directory</span></div>
+                <div class="terminal-line"><span class="terminal-comment"># This route doesn't exist</span></div>
+                <div class="terminal-line"><span class="terminal-prompt">$</span> cd /</div>
+                <div class="terminal-line"><span class="terminal-comment"># Redirecting to home...</span></div>
+            </div>
         </div>
 
-        <a href="/" class="btn-home">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            Back to Home
+        <a href="/" class="btn">
+            ← Back to Home
         </a>
 
         <div class="links">
-            <a href="/#about" class="link">About</a>
-            <a href="/#projects" class="link">Projects</a>
-            <a href="/#experience" class="link">Experience</a>
-            <a href="/#contact" class="link">Contact</a>
+            <a href="index.html" class="link"><span class="hash">#</span>home</a>
+            <a href="projects.html" class="link"><span class="hash">#</span>projects</a>
+            <a href="about.html" class="link"><span class="hash">#</span>about-me</a>
+            <a href="index.html#contact" class="link"><span class="hash">#</span>contacts</a>
+            <a href="resume.html" class="link"><span class="hash">#</span>resume</a>
         </div>
     </div>
 </body>
