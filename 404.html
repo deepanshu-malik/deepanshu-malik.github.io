@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found - Deepanshu Malik Portfolio">
     <title>404 - Page Not Found | Deepanshu Malik</title>
 
-    <!-- Favicon -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Page not found. The page you're looking for doesn't exist or has been moved. Navigate back to Deepanshu Malik's portfolio.">
+    <meta name="keywords" content="404, Page Not Found, Error Page">
+    <meta name="author" content="Deepanshu Malik">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepanshu-malik.github.io/404.html">
+    <meta property="og:title" content="404 - Page Not Found | Deepanshu Malik">
+    <meta property="og:description" content="Page not found. Navigate back to Deepanshu Malik's portfolio.">
+    <meta property="og:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deepanshu-malik.github.io/404.html">
+    <meta property="twitter:title" content="404 - Page Not Found | Deepanshu Malik">
+    <meta property="twitter:description" content="Page not found. Navigate back to Deepanshu Malik's portfolio.">
+    <meta property="twitter:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +45,7 @@
             --text-muted: #607b96;
             --accent: #c778dd;
             --border: #3d3d5c;
+            --border-light: #2d2d4a;
         }
 
         * {
@@ -36,10 +60,17 @@
             color: var(--text-primary);
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             line-height: 1.6;
             font-size: 14px;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
         }
 
         .container {
@@ -172,6 +203,66 @@
             color: var(--accent);
         }
 
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .footer-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .footer-title {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
         /* Background grid */
         .bg-grid {
             position: fixed;
@@ -186,12 +277,16 @@
             z-index: -1;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 1.5rem;
             }
             .links {
                 gap: 16px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -200,44 +295,67 @@
     <!-- Background Grid -->
     <div class="bg-grid"></div>
 
-    <div class="container">
-        <div class="logo">
-            <span class="logo-icon">⬡</span>
-            <span>Deepanshu Malik</span>
-        </div>
-
-        <div class="error-code">404</div>
-        <h1 class="error-title">Page Not Found</h1>
-        <p class="error-message">
-            The page you're looking for doesn't exist or has been moved.
-        </p>
-
-        <div class="terminal">
-            <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
+    <div class="main-content">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">⬡</span>
+                <span>Deepanshu Malik</span>
             </div>
-            <div class="terminal-body">
-                <div class="terminal-line"><span class="terminal-prompt">$</span> cd /your-path</div>
-                <div class="terminal-line"><span class="terminal-error">Error:</span> <span class="terminal-string">No such file or directory</span></div>
-                <div class="terminal-line"><span class="terminal-comment"># This route doesn't exist</span></div>
-                <div class="terminal-line"><span class="terminal-prompt">$</span> cd /</div>
-                <div class="terminal-line"><span class="terminal-comment"># Redirecting to home...</span></div>
+
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                The page you're looking for doesn't exist or has been moved.
+            </p>
+
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> cd /your-path</div>
+                    <div class="terminal-line"><span class="terminal-error">Error:</span> <span class="terminal-string">No such file or directory</span></div>
+                    <div class="terminal-line"><span class="terminal-comment"># This route doesn't exist</span></div>
+                    <div class="terminal-line"><span class="terminal-prompt">$</span> cd /</div>
+                    <div class="terminal-line"><span class="terminal-comment"># Redirecting to home...</span></div>
+                </div>
             </div>
-        </div>
 
-        <a href="/" class="btn">
-            ← Back to Home
-        </a>
+            <a href="/" class="btn">
+                ← Back to Home
+            </a>
 
-        <div class="links">
-            <a href="index.html" class="link"><span class="hash">#</span>home</a>
-            <a href="projects.html" class="link"><span class="hash">#</span>projects</a>
-            <a href="about.html" class="link"><span class="hash">#</span>about-me</a>
-            <a href="index.html#contact" class="link"><span class="hash">#</span>contacts</a>
-            <a href="resume.html" class="link"><span class="hash">#</span>resume</a>
+            <div class="links">
+                <a href="index.html" class="link"><span class="hash">#</span>home</a>
+                <a href="projects.html" class="link"><span class="hash">#</span>projects</a>
+                <a href="about.html" class="link"><span class="hash">#</span>about-me</a>
+                <a href="index.html#contact" class="link"><span class="hash">#</span>contacts</a>
+                <a href="resume.html" class="link"><span class="hash">#</span>resume</a>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-inner">
+                <div class="footer-info">
+                    <div class="footer-name">
+                        <span class="logo-icon" style="color: var(--accent);">⬡</span>
+                        <span>Deepanshu Malik</span>
+                        <span style="color: var(--text-muted);">builds.with.deepanshu@gmail.com</span>
+                    </div>
+                    <span class="footer-title">Senior Backend Engineer & GenAI Developer</span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/deepanshu-malik">GitHub</a>
+                    <a href="https://linkedin.com/in/builds-with-deepanshu">LinkedIn</a>
+                </div>
+            </div>
+            <p class="copyright">© Copyright 2025. Made by Deepanshu</p>
+        </div>
+    </footer>
 </body>
 </html>
