@@ -9,164 +9,48 @@
         :root {
             --bg-primary: #1a1a2e;
             --bg-secondary: #16162a;
-            --bg-card: #1e1e3f;
             --text-primary: #ffffff;
             --text-secondary: #abb2bf;
             --text-muted: #607b96;
             --accent: #c778dd;
-            --accent-secondary: #98c379;
             --border: #3d3d5c;
             --border-light: #2d2d4a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Fira Code', monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 14px;
-        }
+        body { font-family: 'Fira Code', monospace; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 14px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 100;
-            padding: 16px 0;
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border-light); z-index: 100; padding: 16px 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
         .logo-icon { color: var(--accent); }
         .nav-links { display: flex; gap: 24px; }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
         .nav-links a .hash { color: var(--accent); }
-        .section-title {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 48px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+        .section-title { font-size: 28px; font-weight: 500; margin-bottom: 48px; display: flex; align-items: center; gap: 16px; }
         .section-title .hash { color: var(--accent); }
-        .section-title::after {
-            content: '';
-            flex: 1;
-            max-width: 300px;
-            height: 1px;
-            background: var(--accent);
-            opacity: 0.5;
-        }
+        .section-title::after { content: ''; flex: 1; max-width: 300px; height: 1px; background: var(--accent); opacity: 0.5; }
         section { padding: 120px 0 80px; }
-        .project-detail {
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
-            scroll-margin-top: 100px;
-        }
-        .project-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            border-bottom: 1px solid var(--border);
-        }
-        .project-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 64px;
-            padding: 40px;
-            border-right: 1px solid var(--border);
-        }
-        .project-info {
-            padding: 24px 32px;
-        }
-        .project-info h2 {
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-        .project-info .subtitle {
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-        .project-tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .tech-tag {
-            padding: 4px 10px;
-            border: 1px solid var(--border);
-            font-size: 12px;
-            color: var(--text-secondary);
-        }
-        .project-body {
-            padding: 32px;
-        }
-        .project-body h3 {
-            font-size: 16px;
-            font-weight: 500;
-            margin: 24px 0 12px;
-            color: var(--accent);
-        }
+        .project-detail { border: 1px solid var(--border); margin-bottom: 40px; scroll-margin-top: 100px; }
+        .project-header { display: grid; grid-template-columns: 200px 1fr; border-bottom: 1px solid var(--border); }
+        .project-icon { display: flex; align-items: center; justify-content: center; font-size: 64px; padding: 40px; border-right: 1px solid var(--border); }
+        .project-info { padding: 24px 32px; }
+        .project-info h2 { font-size: 24px; font-weight: 500; margin-bottom: 8px; }
+        .project-info .subtitle { color: var(--accent); margin-bottom: 16px; }
+        .project-tech-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tech-tag { padding: 4px 10px; border: 1px solid var(--border); font-size: 12px; color: var(--text-secondary); }
+        .project-body { padding: 32px; }
+        .project-body h3 { font-size: 16px; font-weight: 500; margin: 24px 0 12px; color: var(--accent); }
         .project-body h3:first-child { margin-top: 0; }
-        .project-body p {
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-        .project-body ul {
-            margin: 12px 0 12px 20px;
-            color: var(--text-secondary);
-        }
+        .project-body p { color: var(--text-secondary); margin-bottom: 12px; }
+        .project-body ul { margin: 12px 0 12px 20px; color: var(--text-secondary); }
         .project-body li { margin-bottom: 8px; }
-        .project-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.2s;
-            background: transparent;
-        }
+        .project-links { display: flex; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--text-primary); text-decoration: none; font-size: 14px; transition: all 0.2s; background: transparent; }
         .btn:hover { background: var(--accent); color: var(--bg-primary); }
         .btn-secondary { border-color: var(--border); }
         .btn-secondary:hover { border-color: var(--accent); background: transparent; color: var(--accent); }
-        footer {
-            padding: 32px 0;
-            border-top: 1px solid var(--border-light);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 13px;
-        }
+        footer { padding: 32px 0; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); font-size: 13px; }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .project-header { grid-template-columns: 1fr; }
@@ -177,15 +61,13 @@
 <body>
     <nav>
         <div class="container nav-inner">
-            <a href="index-v3.html" class="logo">
-                <span class="logo-icon">⬡</span>
-                <span>Deepanshu Malik</span>
-            </a>
+            <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span>Deepanshu Malik</span></a>
             <div class="nav-links">
-                <a href="index-v3.html"><span class="hash">#</span>home</a>
-                <a href="index-v3.html#projects" class="active"><span class="hash">#</span>projects</a>
-                <a href="index-v3.html#about"><span class="hash">#</span>about-me</a>
-                <a href="index-v3.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="index.html"><span class="hash">#</span>home</a>
+                <a href="projects.html" class="active"><span class="hash">#</span>projects</a>
+                <a href="about.html"><span class="hash">#</span>about-me</a>
+                <a href="index.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="resume.html"><span class="hash">#</span>resume</a>
             </div>
         </div>
     </nav>
@@ -193,178 +75,50 @@
     <section>
         <div class="container">
             <h1 class="section-title"><span class="hash">#</span>all-projects</h1>
-
-            <!-- Portfolio AI Backend -->
-            <div class="project-detail" id="portfolio-ai-backend">
-                <div class="project-header">
-                    <div class="project-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🤖</div>
-                    <div class="project-info">
-                        <h2>Portfolio AI Backend</h2>
-                        <p class="subtitle">Production-grade RAG Chatbot</p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">OpenAI</span>
-                            <span class="tech-tag">ChromaDB</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <h3>Overview</h3>
-                    <p>A production-ready AI-powered portfolio assistant showcasing advanced GenAI/RAG engineering skills. Powers the "Chat with AI" feature on this portfolio.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>LLM Intent Classification</strong> - Uses gpt-4o-mini for accurate intent understanding (8 intents)</li>
-                        <li><strong>Hybrid Retrieval</strong> - Combines semantic search + keyword matching (BM25-like)</li>
-                        <li><strong>Query Expansion</strong> - Intent-aware query rewriting for better recall</li>
-                        <li><strong>LLM Reranking</strong> - Reorders retrieved docs by relevance using LLM</li>
-                        <li><strong>Token Management</strong> - Smart context truncation with tiktoken</li>
-                        <li><strong>Cost Tracking</strong> - Per-request and session token/cost monitoring</li>
-                        <li><strong>Streaming Responses</strong> - Server-Sent Events for real-time UX</li>
-                    </ul>
-
-                    <h3>Architecture</h3>
-                    <p>User Query → LLM Intent Classification → Hybrid Retrieval (Query expansion + Semantic + Keyword search) → LLM Reranking → Response Generation with streaming</p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/deepanshu-malik/portfolio-ai-backend" target="_blank" class="btn">View Code →</a>
-                        <a href="index-v3.html" class="btn btn-secondary" onclick="setTimeout(()=>window.openChat&&openChat(),100)">Try Live Demo →</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Communication Platform -->
-            <div class="project-detail" id="communication-platform">
-                <div class="project-header">
-                    <div class="project-icon" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">💬</div>
-                    <div class="project-info">
-                        <h2>Communication Platform</h2>
-                        <p class="subtitle">Multi-channel Messaging System @ Capri Global</p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">AWS SQS</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Redis</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <h3>Overview</h3>
-                    <p>Enterprise-grade multi-channel communication platform handling WhatsApp, SMS, RCS, and email with queue-based architecture and real-time delivery tracking.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>Multi-channel Support</strong> - WhatsApp Business API, SMS gateways, RCS, Email</li>
-                        <li><strong>Queue-based Architecture</strong> - AWS SQS for reliable message processing</li>
-                        <li><strong>Template Management</strong> - Dynamic templates with variable substitution</li>
-                        <li><strong>Delivery Tracking</strong> - Real-time status updates and webhooks</li>
-                        <li><strong>Rate Limiting</strong> - Per-channel rate limits to comply with provider policies</li>
-                        <li><strong>Retry Mechanism</strong> - Exponential backoff for failed deliveries</li>
-                    </ul>
-
-                    <h3>Impact</h3>
-                    <ul>
-                        <li>Processes 100K+ messages daily across all channels</li>
-                        <li>40% reduction in deployment time through CI/CD optimization</li>
-                        <li>99.9% message delivery success rate</li>
-                    </ul>
-
-                    <div class="project-links">
-                        <span style="color: var(--text-muted); padding: 10px 0;">Professional Project - Code not public</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Document Dispatch -->
-            <div class="project-detail" id="document-dispatch">
-                <div class="project-header">
-                    <div class="project-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">📄</div>
-                    <div class="project-info">
-                        <h2>Document Dispatch System</h2>
-                        <p class="subtitle">Automated PDF Generation @ Voereir</p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">OpenSearch</span>
-                            <span class="tech-tag">WeasyPrint</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">AWS S3</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <h3>Overview</h3>
-                    <p>High-performance document management system with automated PDF generation, OpenSearch integration for fast retrieval, and S3 storage for scalable document hosting.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>PDF Generation</strong> - WeasyPrint for HTML-to-PDF conversion with custom templates</li>
-                        <li><strong>OpenSearch Integration</strong> - Full-text search across document metadata</li>
-                        <li><strong>Batch Processing</strong> - Async generation for bulk document requests</li>
-                        <li><strong>S3 Storage</strong> - Scalable document storage with presigned URLs</li>
-                        <li><strong>Audit Trail</strong> - Complete tracking of document lifecycle</li>
-                    </ul>
-
-                    <h3>Impact</h3>
-                    <ul>
-                        <li>75% improvement in query performance through OpenSearch optimization</li>
-                        <li>Generates 10,000+ documents per month</li>
-                        <li>Reduced document retrieval time from 5s to 200ms</li>
-                    </ul>
-
-                    <div class="project-links">
-                        <span style="color: var(--text-muted); padding: 10px 0;">Professional Project - Code not public</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- B2B Marketplace -->
-            <div class="project-detail" id="b2b-marketplace">
-                <div class="project-header">
-                    <div class="project-icon" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">🏪</div>
-                    <div class="project-info">
-                        <h2>B2B Marketplace Backend</h2>
-                        <p class="subtitle">E-commerce Platform @ TradeIndia</p>
-                        <div class="project-tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">Elasticsearch</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-body">
-                    <h3>Overview</h3>
-                    <p>Backend services for India's leading B2B marketplace platform, handling product listings, search, and buyer-seller interactions.</p>
-                    
-                    <h3>Key Features</h3>
-                    <ul>
-                        <li><strong>RESTful APIs</strong> - Product catalog, search, and user management</li>
-                        <li><strong>Search Optimization</strong> - Elasticsearch for product discovery</li>
-                        <li><strong>Caching Layer</strong> - Redis for frequently accessed data</li>
-                        <li><strong>Database Optimization</strong> - Query tuning and indexing strategies</li>
-                    </ul>
-
-                    <div class="project-links">
-                        <span style="color: var(--text-muted); padding: 10px 0;">Professional Project - Code not public</span>
-                    </div>
-                </div>
-            </div>
-
+            <div id="projects-container"></div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="index-v3.html" class="btn">← Back to Home</a>
+                <a href="index.html" class="btn">← Back to Home</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© Copyright 2025. Made by Deepanshu Malik</p>
-        </div>
-    </footer>
+    <footer><div class="container"><p>© Copyright 2025. Made by Deepanshu Malik</p></div></footer>
+
+    <script>
+        fetch('data/projects-data.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('projects-container').innerHTML = data.projects.map(p => `
+                    <div class="project-detail" id="${p.id}">
+                        <div class="project-header">
+                            <div class="project-icon" style="background: ${p.gradient};">${p.icon}</div>
+                            <div class="project-info">
+                                <h2>${p.title}</h2>
+                                <p class="subtitle">${p.subtitle}</p>
+                                <div class="project-tech-tags">${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Overview</h3>
+                            <p>${p.description}</p>
+                            <h3>Key Features</h3>
+                            <ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
+                            ${p.impact ? `<h3>Impact</h3><ul>${p.impact.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+                            ${p.architecture ? `<h3>Architecture</h3><p>${p.architecture}</p>` : ''}
+                            <div class="project-links">
+                                ${p.github ? `<a href="${p.github}" target="_blank" class="btn">View Code →</a>` : ''}
+                                ${p.live ? `<a href="index.html" class="btn btn-secondary" onclick="localStorage.setItem('openChat','1')">Try Live Demo →</a>` : ''}
+                                ${!p.isPublic && !p.github ? `<span style="color: var(--text-muted); padding: 10px 0;">Professional Project - Code not public</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Scroll to hash if present
+                if (window.location.hash) {
+                    setTimeout(() => document.querySelector(window.location.hash)?.scrollIntoView({ behavior: 'smooth' }), 100);
+                }
+            });
+    </script>
 </body>
 </html>

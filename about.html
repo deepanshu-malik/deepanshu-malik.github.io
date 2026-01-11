@@ -9,7 +9,6 @@
         :root {
             --bg-primary: #1a1a2e;
             --bg-secondary: #16162a;
-            --bg-card: #1e1e3f;
             --text-primary: #ffffff;
             --text-secondary: #abb2bf;
             --text-muted: #607b96;
@@ -18,24 +17,9 @@
             --border-light: #2d2d4a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Fira Code', monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 14px;
-        }
+        body { font-family: 'Fira Code', monospace; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 14px; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 100;
-            padding: 16px 0;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border-light); z-index: 100; padding: 16px 0; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
         .logo-icon { color: var(--accent); }
@@ -43,14 +27,7 @@
         .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
         .nav-links a .hash { color: var(--accent); }
-        .section-title {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 48px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
+        .section-title { font-size: 28px; font-weight: 500; margin-bottom: 48px; display: flex; align-items: center; gap: 16px; }
         .section-title .hash { color: var(--accent); }
         .section-title::after { content: ''; flex: 1; max-width: 300px; height: 1px; background: var(--accent); opacity: 0.5; }
         section { padding: 120px 0 80px; }
@@ -70,17 +47,7 @@
         .timeline-content h4 { font-size: 16px; margin-bottom: 4px; }
         .timeline-content .company { color: var(--accent); margin-bottom: 12px; }
         .timeline-content p { color: var(--text-secondary); font-size: 14px; }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--text-primary); text-decoration: none; font-size: 14px; transition: all 0.2s; }
         .btn:hover { background: var(--accent); color: var(--bg-primary); }
         footer { padding: 32px 0; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); font-size: 13px; }
         @media (max-width: 768px) {
@@ -93,15 +60,13 @@
 <body>
     <nav>
         <div class="container nav-inner">
-            <a href="index-v3.html" class="logo">
-                <span class="logo-icon">⬡</span>
-                <span>Deepanshu Malik</span>
-            </a>
+            <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span>Deepanshu Malik</span></a>
             <div class="nav-links">
-                <a href="index-v3.html"><span class="hash">#</span>home</a>
-                <a href="index-v3.html#projects"><span class="hash">#</span>projects</a>
-                <a href="index-v3.html#about" class="active"><span class="hash">#</span>about-me</a>
-                <a href="index-v3.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="index.html"><span class="hash">#</span>home</a>
+                <a href="projects.html"><span class="hash">#</span>projects</a>
+                <a href="about.html" class="active"><span class="hash">#</span>about-me</a>
+                <a href="index.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="resume.html"><span class="hash">#</span>resume</a>
             </div>
         </div>
     </nav>
@@ -109,86 +74,50 @@
     <section>
         <div class="container">
             <h1 class="section-title"><span class="hash">#</span>about-me</h1>
-            
-            <div class="about-content">
-                <p>Hello! I'm <strong>Deepanshu Malik</strong>, a Senior Backend Engineer based in India with a passion for building robust, scalable systems that solve real-world problems.</p>
-                
-                <p>With <strong>4+ years of experience</strong> in fintech backend development, I've architected and built production microservices from the ground up. Currently at <strong>Kogta Financial</strong>, I lead backend development initiatives and work closely with leadership to translate complex product requirements into scalable solutions.</p>
-                
-                <p>My journey in tech started with a curiosity about how large-scale systems work. This led me through various roles where I've built everything from B2B marketplace backends to enterprise communication platforms handling millions of messages.</p>
-                
-                <p>I'm a <strong>Certified Kubernetes Administrator (CKA)</strong>, which reflects my commitment to understanding infrastructure deeply. I believe that great backend engineers should understand not just the code they write, but the entire ecosystem it runs in.</p>
-                
-                <p>Currently, I'm exploring the intersection of backend engineering and <strong>Generative AI</strong>. I'm fascinated by how LLMs can be integrated into production systems, and I've been building RAG pipelines, working with vector databases, and experimenting with prompt engineering techniques.</p>
-                
-                <p>When I'm not coding, you'll find me reading about distributed systems, contributing to open-source projects, or exploring new AI tools and frameworks.</p>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-value">4+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">5+</div>
-                    <div class="stat-label">Microservices Built</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-value">CKA</div>
-                    <div class="stat-label">Kubernetes Certified</div>
-                </div>
-            </div>
-
+            <div class="about-content" id="about-content"></div>
+            <div class="stats-grid" id="stats-grid"></div>
             <div class="timeline">
                 <h3><span class="hash">#</span>experience</h3>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Mar 2025 - Present</div>
-                    <div class="timeline-content">
-                        <h4>Senior Software Engineer</h4>
-                        <div class="company">Kogta Financial</div>
-                        <p>Architecting and developing production microservices. Leading backend development for fintech applications with focus on scalability and reliability. Working directly with leadership on technical strategy.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Apr 2023 - Mar 2025</div>
-                    <div class="timeline-content">
-                        <h4>Software Engineer</h4>
-                        <div class="company">Capri Global</div>
-                        <p>Built multi-channel communication platform handling WhatsApp, SMS, RCS, and email. Achieved 40% reduction in deployment time through CI/CD optimization. Processed 100K+ messages daily.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Apr 2022 - Apr 2023</div>
-                    <div class="timeline-content">
-                        <h4>Software Engineer</h4>
-                        <div class="company">Voereir</div>
-                        <p>Developed document dispatch system with 75% improvement in query performance through OpenSearch optimization. Built automated PDF generation pipeline handling 10K+ documents monthly.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">Apr 2021 - Apr 2022</div>
-                    <div class="timeline-content">
-                        <h4>Software Engineer</h4>
-                        <div class="company">TradeIndia</div>
-                        <p>Built backend services for India's leading B2B marketplace platform. Implemented RESTful APIs, search optimization with Elasticsearch, and database performance tuning.</p>
-                    </div>
-                </div>
+                <div id="timeline"></div>
             </div>
-
             <div style="text-align: center; margin-top: 48px;">
-                <a href="index-v3.html" class="btn">← Back to Home</a>
+                <a href="index.html" class="btn">← Back to Home</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>© Copyright 2025. Made by Deepanshu Malik</p>
-        </div>
-    </footer>
+    <footer><div class="container"><p>© Copyright 2025. Made by Deepanshu Malik</p></div></footer>
+
+    <script>
+        Promise.all([
+            fetch('data/about-data.json').then(r => r.json()),
+            fetch('data/resume-data.json').then(r => r.json())
+        ]).then(([about, resume]) => {
+            // About content
+            document.getElementById('about-content').innerHTML = about.intro.paragraphs.map(p => 
+                `<p>${p.replace(/(\d\+|CKA|Kogta Financial|Generative AI)/g, '<strong>$1</strong>')}</p>`
+            ).join('');
+
+            // Stats
+            document.getElementById('stats-grid').innerHTML = about.stats.map(s => `
+                <div class="stat-box">
+                    <div class="stat-value">${s.value}</div>
+                    <div class="stat-label">${s.label}</div>
+                </div>
+            `).join('');
+
+            // Timeline from resume data
+            document.getElementById('timeline').innerHTML = resume.experience.map(exp => `
+                <div class="timeline-item">
+                    <div class="timeline-date">${exp.duration}</div>
+                    <div class="timeline-content">
+                        <h4>${exp.role}</h4>
+                        <div class="company">${exp.company}</div>
+                        <p>${exp.highlights.join('. ')}.</p>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
 </body>
 </html>

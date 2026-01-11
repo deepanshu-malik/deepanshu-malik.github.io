@@ -1,47 +1,51 @@
 # Deepanshu Malik - Portfolio Website
 
-Personal portfolio website featuring an AI-powered interactive assistant. Built with HTML, Tailwind CSS, and vanilla JavaScript.
+Personal portfolio website with a terminal/monospace aesthetic and integrated AI chat assistant. Built with vanilla HTML, CSS, and JavaScript using a JSON-driven architecture.
 
 **Live URL**: [https://deepanshu-malik.github.io](https://deepanshu-malik.github.io)
 
 ## Features
 
-- **Modern Dark Theme**: Glassmorphism effects, gradients, and neon accents
-- **Smooth Animations**: Page load, scroll, and hover animations
+- **Terminal Aesthetic**: Monospace typography with purple/pink accents and retro-futuristic design
+- **JSON-Driven Content**: All content (projects, resume, about) loaded from structured JSON files
+- **Integrated AI Chat**: Modal-based chatbot powered by RAG (Retrieval Augmented Generation)
+- **Self-Contained Pages**: All styles inline, no external CSS/JS dependencies
 - **Responsive Design**: Mobile-first approach, works on all devices
-- **AI Chat Assistant**: Interactive chatbot powered by RAG (Retrieval Augmented Generation)
-- **Code Highlighting**: Syntax-highlighted code snippets in chat
+- **Smooth Animations**: Quote carousel, hover effects, and transitions
 
 ## Sections
 
-1. **Hero** - Animated intro with profile photo and CTAs
-2. **About** - Professional summary with animated stat counters
-3. **Skills** - Categorized tech skills with hover effects
-4. **Projects** - GitHub and professional projects with tabs
-5. **Experience** - Interactive timeline of work history
-6. **Contact** - Contact information and social links
+1. **Hero** - Terminal-style code snippet with tech stack icons
+2. **Quote Carousel** - Scrolling programming quotes
+3. **Projects** - JSON-driven project cards with live/GitHub links
+4. **Skills** - Grid layout with categorized technical skills
+5. **Experience** - Timeline with highlighted achievements
+6. **About** - Professional bio and background
+7. **Contact** - Email, LinkedIn, and GitHub links
 
 ## Tech Stack
 
 - HTML5
-- Tailwind CSS (CDN)
+- CSS3 (inline styles with CSS variables)
 - Vanilla JavaScript
-- Prism.js (code highlighting)
+- Fira Code font (monospace)
+- Marked.js (markdown parsing for chat)
 
 ## Project Structure
 
 ```
 deepanshu-malik.github.io/
-├── index.html              # Main portfolio page
-├── css/
-│   └── style.css           # Custom styles (glassmorphism, animations)
-├── js/
-│   ├── main.js             # Navigation, animations, interactions
-│   ├── chat.js             # Chat interface logic
-│   └── particles.js        # Background particle animation
+├── index.html              # Main portfolio landing page
+├── about.html              # About page
+├── projects.html           # Projects listing page
+├── resume.html             # Resume/CV page
+├── 404.html                # Error page
+├── data/
+│   ├── projects-data.json  # Project information
+│   ├── resume-data.json    # Resume/CV data
+│   └── about-data.json     # About page content
 ├── assets/
-│   └── images/
-│       └── profile.jpg     # Profile photo (add your own)
+│   └── images/             # Favicon, profile, OG images
 └── README.md
 ```
 
@@ -62,13 +66,12 @@ python -m http.server 3000
 
 ## Chat Integration
 
-The chat feature connects to a FastAPI backend. Update the `CONFIG.API_URL` in `js/chat.js`:
+The integrated chat modal connects to a FastAPI backend. Update the `API_URL` constant in `index.html`:
 
 ```javascript
-const CONFIG = {
-    API_URL: 'https://your-backend-url.onrender.com/api',
-    // ...
-};
+const API_URL = window.location.hostname === 'localhost'
+    ? 'http://localhost:8000/api'
+    : 'https://your-backend-url.onrender.com/api';
 ```
 
 See [portfolio-ai-backend](https://github.com/deepanshu-malik/portfolio-ai-backend) for backend setup.
@@ -76,25 +79,27 @@ See [portfolio-ai-backend](https://github.com/deepanshu-malik/portfolio-ai-backe
 ## Customization
 
 ### Profile Photo
-Replace `assets/images/profile.jpg` with your photo.
+Replace images in `assets/images/` directory (favicon, profile, etc.).
 
 ### Colors
-Edit CSS variables in `css/style.css`:
+Edit CSS variables in the `<style>` section of each HTML file:
 ```css
 :root {
-    --accent-primary: #6366f1;   /* Indigo */
-    --accent-secondary: #8b5cf6; /* Purple */
-    --accent-tertiary: #06b6d4;  /* Cyan */
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16162a;
+    --accent: #c778dd;           /* Purple/pink accent */
+    --text-primary: #ffffff;
+    --text-secondary: #abb2bf;
 }
 ```
 
 ### Content
-Edit the HTML in `index.html` to update:
-- Bio and summary
-- Skills and technologies
-- Projects information
-- Work experience
-- Contact details
+Edit JSON files in the `/data/` directory:
+- **data/projects-data.json** - Update project information, tech stacks, and links
+- **data/resume-data.json** - Update work experience, education, skills, and certifications
+- **data/about-data.json** - Update bio, stats, and personal information
+
+For other content (hero text, quotes), edit the HTML directly in `index.html`.
 
 ## Deployment
 

@@ -1,280 +1,237 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Deepanshu Malik - Senior Backend Engineer CV. Python, FastAPI, GenAI, Kubernetes. 4+ years in fintech.">
-    <meta name="robots" content="noindex, nofollow">
-    <title>CV - Deepanshu Malik | Senior Backend Engineer</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Resume Styles -->
-    <link rel="stylesheet" href="css/resume.css">
-
-    <!-- html2pdf.js for PDF generation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <title>Resume | Deepanshu Malik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16162a;
+            --text-primary: #ffffff;
+            --text-secondary: #abb2bf;
+            --text-muted: #607b96;
+            --accent: #c778dd;
+            --border: #3d3d5c;
+            --border-light: #2d2d4a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Fira Code', monospace; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 14px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border-light); z-index: 100; padding: 16px 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 8px; color: var(--text-primary); text-decoration: none; font-weight: 600; }
+        .logo-icon { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+        .nav-links a .hash { color: var(--accent); }
+        section { padding: 120px 0 80px; }
+        .resume-header { text-align: center; margin-bottom: 48px; }
+        .resume-header h1 { font-size: 32px; margin-bottom: 8px; }
+        .resume-header .title { color: var(--accent); font-size: 16px; margin-bottom: 16px; }
+        .resume-header .contact-info { color: var(--text-secondary); font-size: 13px; line-height: 1.8; }
+        .resume-header .contact-info a { color: var(--text-secondary); }
+        .resume-header .contact-info a:hover { color: var(--accent); }
+        .resume-section { margin-bottom: 40px; }
+        .resume-section h2 { font-size: 18px; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 20px; }
+        .resume-item { margin-bottom: 24px; }
+        .resume-item-header { display: flex; justify-content: space-between; margin-bottom: 4px; flex-wrap: wrap; gap: 8px; }
+        .resume-item h3 { font-size: 15px; }
+        .resume-item .company { color: var(--text-secondary); }
+        .resume-item .location { color: var(--text-muted); font-size: 12px; }
+        .resume-item .company-context { color: var(--text-muted); font-size: 12px; font-style: italic; margin: 4px 0; }
+        .resume-item .date { color: var(--text-muted); font-size: 13px; text-align: right; }
+        .resume-item .description { color: var(--text-secondary); font-size: 13px; margin-top: 8px; }
+        .resume-item ul { margin: 8px 0 0 20px; color: var(--text-secondary); font-size: 13px; }
+        .resume-item li { margin-bottom: 4px; }
+        .resume-item .tech { color: var(--text-muted); font-size: 12px; margin-top: 6px; }
+        .skills-grid { display: grid; gap: 16px; }
+        .skill-category { margin-bottom: 8px; }
+        .skill-category-name { color: var(--text-primary); font-size: 13px; margin-bottom: 4px; }
+        .skill-category-items { color: var(--text-secondary); font-size: 13px; }
+        .summary-text { color: var(--text-secondary); font-size: 13px; }
+        .additional-info { color: var(--text-secondary); font-size: 13px; }
+        .additional-info p { margin-bottom: 4px; }
+        .project-link { color: var(--text-muted); font-size: 12px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--accent); color: var(--text-primary); text-decoration: none; font-size: 14px; transition: all 0.2s; background: transparent; cursor: pointer; font-family: inherit; }
+        .btn:hover { background: var(--accent); color: var(--bg-primary); }
+        .actions { text-align: center; margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        footer { padding: 32px 0; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); font-size: 13px; }
+        @media print {
+            nav, .actions, footer { display: none; }
+            section { padding: 10px 0; }
+            body { background: white; color: #000; font-size: 9pt; font-family: 'Inter', Arial, sans-serif; line-height: 1.4; }
+            .container { max-width: 100%; }
+            .resume-header { margin-bottom: 18px; }
+            .resume-header h1 { font-size: 18pt; color: #000; font-weight: 700; font-family: Georgia, 'Times New Roman', serif; }
+            .resume-header .title { color: #333; font-weight: 500; font-size: 10pt; font-family: Georgia, 'Times New Roman', serif; }
+            .resume-header .contact-info { color: #222; font-size: 8pt; }
+            .resume-header .contact-info a { color: #222; text-decoration: none; }
+            .resume-section { margin-bottom: 18px; }
+            .resume-section h2 { color: #000; border-color: #333; font-size: 11pt; font-weight: 700; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 6px; }
+            .summary-text { color: #222 !important; font-size: 9pt !important; }
+            .resume-item { margin-bottom: 10px; }
+            .resume-item h3 { font-size: 9pt; color: #000; font-weight: 600; }
+            .resume-item .company { color: #111; font-weight: 500; }
+            .resume-item .location, .resume-item .date { color: #444; font-size: 8pt; }
+            .resume-item .company-context { color: #555; font-size: 8pt; font-style: italic; }
+            .resume-item ul, .resume-item .description { color: #222; font-size: 9pt; }
+            .resume-item .tech { color: #444; font-size: 8pt; }
+            .resume-item a, .project-link { font-size: 8pt !important; color: #333; }
+            .skills-grid { line-height: 1.1; }
+            .skill-category { margin-bottom: 0; line-height: 1.1; }
+            .skill-category-name { color: #000; font-weight: 600; font-size: 9pt; }
+            .skill-category-items { color: #222; font-size: 9pt; }
+            .additional-info { color: #222; font-size: 9pt; }
+            .additional-info p { color: #222; font-size: 9pt; margin-bottom: 2px; }
+            .additional-info strong { font-weight: 600; }
+            a { color: #0055aa !important; text-decoration: underline !important; }
+            a:link, a:visited, a:hover, a:active { color: #222 !important; text-decoration: none !important; }
+        }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
 </head>
 <body>
-    <!-- Loading State -->
-    <div id="loading-state" class="loading-overlay">
-        <div class="loading-spinner"></div>
-        <p>Loading resume...</p>
-    </div>
-
-    <!-- Control Bar (Web Only) -->
-    <div class="control-bar no-print">
-        <div class="control-bar-inner">
-            <a href="/" class="back-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back to Portfolio
-            </a>
-            <div class="control-actions">
-                <button id="toggle-theme" class="btn-control" title="Toggle light/dark mode">
-                    <svg id="theme-icon-dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg id="theme-icon-light" class="hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <button id="download-pdf" class="btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    Download PDF
-                </button>
+    <nav>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">⬡</span><span>Deepanshu Malik</span></a>
+            <div class="nav-links">
+                <a href="index.html"><span class="hash">#</span>home</a>
+                <a href="projects.html"><span class="hash">#</span>projects</a>
+                <a href="about.html"><span class="hash">#</span>about-me</a>
+                <a href="index.html#contact"><span class="hash">#</span>contacts</a>
+                <a href="resume.html" class="active"><span class="hash">#</span>resume</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Resume Container -->
-    <div class="resume-wrapper">
-        <div id="resume" class="resume">
-            <!-- Content will be dynamically populated from JSON -->
-        </div>
-    </div>
-
-    <!-- Resume Template (hidden, used for rendering) -->
-    <template id="resume-template">
-        <!-- Page 1 -->
-        <div class="page" data-page="1">
-            <!-- Header -->
-            <header class="header">
-                <div class="header-main">
-                    <h1 class="name" data-field="personal.name"></h1>
-                    <p class="title" data-field="personal.title"></p>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-row">
-                        <a href="" class="contact-item" data-field="personal.email" data-href="mailto:">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span data-text="personal.email"></span>
-                        </a>
-                        <span class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            <span data-text="personal.phone"></span>
-                        </span>
-                        <span class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span data-text="personal.location"></span> &bull; <span data-text="personal.relocation"></span>
-                        </span>
-                    </div>
-                    <div class="contact-row">
-                        <a href="" target="_blank" class="contact-item" data-href="personal.linkedin.url">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                            <span data-text="personal.linkedin.display"></span>
-                        </a>
-                        <a href="" target="_blank" class="contact-item" data-href="personal.github.url">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                            </svg>
-                            <span data-text="personal.github.display"></span>
-                        </a>
-                        <a href="" target="_blank" class="contact-item" data-href="personal.website.url">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                            </svg>
-                            <span data-text="personal.website.display"></span>
-                        </a>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Professional Summary -->
-            <section class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="summary" data-html="summary"></p>
-            </section>
-
-            <!-- Technical Skills -->
-            <section class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid" data-list="skills">
-                    <!-- Skills populated dynamically -->
-                </div>
-            </section>
-
-            <!-- Professional Experience (Page 1) -->
-            <section class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                <div data-list="experience" data-limit="2">
-                    <!-- First 2 experiences populated dynamically -->
-                </div>
-            </section>
-        </div>
-
-        <!-- Page 2 -->
-        <div class="page" data-page="2">
-            <!-- Experience Continued -->
-            <section class="section">
-                <h2 class="section-title">Professional Experience <span class="continued">(continued)</span></h2>
-                <div data-list="experience" data-offset="2">
-                    <!-- Remaining experiences populated dynamically -->
-                </div>
-            </section>
-
-            <!-- Notable Projects -->
-            <section class="section">
-                <h2 class="section-title">Notable Projects</h2>
-                <div data-list="projects">
-                    <!-- Projects populated dynamically -->
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section class="section">
-                <h2 class="section-title">Education</h2>
-                <div data-list="education">
-                    <!-- Education populated dynamically -->
-                </div>
-            </section>
-
-            <!-- Certifications -->
-            <section class="section">
-                <h2 class="section-title">Certifications</h2>
-                <div data-list="certifications">
-                    <!-- Certifications populated dynamically -->
-                </div>
-            </section>
-
-            <!-- Additional Information -->
-            <section class="section section-additional">
-                <h2 class="section-title">Additional Information</h2>
-                <div class="additional-grid">
-                    <div class="additional-item">
-                        <span class="additional-label">Languages:</span>
-                        <span data-text="additional.languages"></span>
-                    </div>
-                    <div class="additional-item">
-                        <span class="additional-label">Availability:</span>
-                        <span data-text="additional.availability"></span>
-                    </div>
-                    <div class="additional-item">
-                        <span class="additional-label">Interests:</span>
-                        <span data-text="additional.interests"></span>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </template>
-
-    <!-- Component Templates -->
-    <template id="skill-template">
-        <div class="skill-category">
-            <span class="skill-label" data-text="category">:</span>
-            <span class="skill-items" data-text="items"></span>
-        </div>
-    </template>
-
-    <template id="experience-template">
-        <div class="experience-item">
-            <div class="experience-header">
-                <div class="experience-title-group">
-                    <h3 class="job-title" data-text="title"></h3>
-                    <span class="company" data-text="company"></span>
-                </div>
-                <div class="experience-meta">
-                    <span class="duration" data-text="duration"></span>
-                    <span class="location" data-text="locationDisplay"></span>
-                </div>
+    <section>
+        <div class="container">
+            <div class="resume-header">
+                <h1 id="name"></h1>
+                <p class="title" id="title"></p>
+                <div class="contact-info" id="contact-info"></div>
             </div>
-            <ul class="achievements" data-list="achievements">
-                <!-- Achievements populated dynamically -->
-            </ul>
-        </div>
-    </template>
 
-    <template id="achievement-template">
-        <li data-html="text"></li>
-    </template>
-
-    <template id="project-template">
-        <div class="project-item">
-            <div class="project-header">
-                <h3 class="project-title" data-text="title"></h3>
-                <a href="" target="_blank" class="project-link" data-href="url" data-text="displayUrl"></a>
+            <div class="resume-section">
+                <h2>Summary</h2>
+                <p class="summary-text" id="summary"></p>
             </div>
-            <p class="project-description" data-text="description"></p>
-            <span class="project-tech" data-text="technologies"></span>
-        </div>
-    </template>
 
-    <template id="education-template">
-        <div class="education-item">
-            <div class="education-header">
-                <div>
-                    <h3 class="degree" data-text="degree"></h3>
-                    <span class="institution" data-text="institution"></span>
-                </div>
-                <span class="duration" data-text="duration"></span>
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <div class="skills-grid" id="skills"></div>
+            </div>
+
+            <div class="resume-section">
+                <h2>Experience</h2>
+                <div id="experience"></div>
+            </div>
+
+            <div class="resume-section">
+                <h2>Projects</h2>
+                <div id="projects"></div>
+            </div>
+
+            <div class="resume-section">
+                <h2>Education</h2>
+                <div id="education"></div>
+            </div>
+
+            <div class="resume-section">
+                <h2>Certifications</h2>
+                <div id="certifications"></div>
+            </div>
+
+            <div class="resume-section">
+                <h2>Additional</h2>
+                <div class="additional-info" id="additional"></div>
+            </div>
+
+            <div class="actions">
+                <a href="index.html" class="btn">← Back to Home</a>
+                <button onclick="window.print()" class="btn">Print / Save PDF</button>
             </div>
         </div>
-    </template>
+    </section>
 
-    <template id="certification-template">
-        <div class="certification-item">
-            <div class="cert-badge" data-text="shortName"></div>
-            <div class="cert-details">
-                <h3 class="cert-title" data-text="name"></h3>
-                <span class="cert-issuer" data-text="issuerDisplay"></span>
-            </div>
-        </div>
-    </template>
+    <footer><div class="container"><p>© Copyright 2025. Made by Deepanshu Malik</p></div></footer>
 
-    <!-- Resume JavaScript -->
-    <script src="js/resume.js"></script>
+    <script>
+        fetch('data/resume-data.json')
+            .then(r => r.json())
+            .then(data => {
+                const p = data.personal;
+                document.getElementById('name').textContent = p.name;
+                document.getElementById('title').textContent = p.title;
+                document.getElementById('contact-info').innerHTML = `
+                    <a href="mailto:${p.email}">${p.email}</a> • ${p.phone} • ${p.location}<br>
+                    <a href="${p.linkedin.url}" target="_blank">${p.linkedin.display}</a> • 
+                    <a href="${p.github.url}" target="_blank">${p.github.display}</a> • 
+                    <a href="${p.website.url}" target="_blank">${p.website.display}</a><br>
+                    ${p.relocation}
+                `;
+                document.getElementById('summary').innerHTML = data.summary;
+
+                document.getElementById('skills').innerHTML = data.skills.map(s => `
+                    <div class="skill-category">
+                        <span class="skill-category-name">${s.category}:</span>
+                        <span class="skill-category-items">${s.items}</span>
+                    </div>
+                `).join('');
+
+                document.getElementById('experience').innerHTML = data.experience.map(exp => `
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <div>
+                                <h3>${exp.title}</h3>
+                                <span class="company">${exp.company}</span>
+                                <span class="location"> • ${exp.location} (${exp.type})</span>
+                            </div>
+                            <span class="date">${exp.startDate} - ${exp.endDate}</span>
+                        </div>
+                        ${exp.companyContext ? `<p class="company-context">${exp.companyContext}</p>` : ''}
+                        <ul>${exp.achievements.map(a => `<li>${a}</li>`).join('')}</ul>
+                    </div>
+                `).join('');
+
+                document.getElementById('projects').innerHTML = data.projects.map(proj => `
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>${proj.title}</h3>
+                            <a href="${proj.url}" target="_blank" class="project-link">${proj.displayUrl}</a>
+                        </div>
+                        <p class="description">${proj.description}</p>
+                        <p class="tech">Tech: ${proj.technologies}</p>
+                    </div>
+                `).join('');
+
+                document.getElementById('education').innerHTML = data.education.map(edu => `
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <h3>${edu.degree}</h3>
+                            <span class="date">${edu.startYear} - ${edu.endYear}</span>
+                        </div>
+                        <span class="company">${edu.institution}</span>
+                    </div>
+                `).join('');
+
+                document.getElementById('certifications').innerHTML = data.certifications.map(cert => `
+                    <div class="resume-item">
+                        <h3>${cert.name} (${cert.shortName})</h3>
+                        <span class="company">${cert.issuer} • ${cert.issueDate}</span>
+                    </div>
+                `).join('');
+
+                const add = data.additional;
+                document.getElementById('additional').innerHTML = `
+                    <p><strong>Languages:</strong> ${add.languages}</p>
+                    <p><strong>Availability:</strong> ${add.availability}</p>
+                    ${add.visaStatus ? `<p><strong>Work Authorization:</strong> ${add.visaStatus}</p>` : ''}
+                `;
+            });
+    </script>
 </body>
 </html>
