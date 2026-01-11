@@ -1,0 +1,24 @@
+{
+  "name": "deepanshu-malik.github.io",
+  "version": "1.0.0",
+  "description": "Personal portfolio website with a terminal/monospace aesthetic and integrated AI chat assistant. Built with vanilla HTML, CSS, and JavaScript using a JSON-driven architecture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepanshu-malik/deepanshu-malik.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepanshu-malik/deepanshu-malik.github.io/issues"
+  },
+  "homepage": "https://github.com/deepanshu-malik/deepanshu-malik.github.io#readme",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.18.3"
+  }
+}
