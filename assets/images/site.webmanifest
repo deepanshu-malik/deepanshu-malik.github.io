@@ -1,0 +1,23 @@
+{
+  "name": "Deepanshu Malik - Senior Backend Engineer",
+  "short_name": "Deepanshu Malik",
+  "icons": [
+    {
+      "src": "/assets/images/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a1a2e",
+  "background_color": "#1a1a2e",
+  "display": "standalone",
+  "description": "Senior Backend Engineer & GenAI Developer portfolio",
+  "orientation": "portrait"
+}
