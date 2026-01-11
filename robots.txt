@@ -1,0 +1,10 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://deepanshu-malik.github.io/sitemap.xml
+
+# Disallow certain files (optional)
+Disallow: /og-image-template.html
+Disallow: /*.md$
