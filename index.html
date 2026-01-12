@@ -721,9 +721,12 @@
         .chat-message.bot {
             color: var(--text-secondary);
             line-height: 1.8;
+            padding: 12px 0;
         }
         .chat-message.bot p { margin-bottom: 12px; }
+        .chat-message.bot p:only-child { margin-bottom: 0; }
         .chat-message.bot p:last-child { margin-bottom: 0; }
+        .chat-message.bot > *:first-child { margin-top: 0; }
         .chat-message.bot h2, .chat-message.bot h3 {
             color: var(--text-primary);
             margin: 20px 0 12px;
