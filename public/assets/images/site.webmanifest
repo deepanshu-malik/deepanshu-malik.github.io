@@ -1,5 +1,5 @@
 {
-  "name": "Deepanshu Malik - Senior Backend Engineer",
+  "name": "Deepanshu Malik - AI Practice Lead",
   "short_name": "Deepanshu Malik",
   "icons": [
     {
@@ -15,9 +15,9 @@
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#1a1a2e",
-  "background_color": "#1a1a2e",
+  "theme_color": "#191410",
+  "background_color": "#191410",
   "display": "standalone",
-  "description": "Senior Backend Engineer & GenAI Developer portfolio",
+  "description": "AI Practice Lead — production GenAI systems portfolio",
   "orientation": "portrait"
 }
