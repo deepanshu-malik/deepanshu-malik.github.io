@@ -1,362 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Deepanshu Malik</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Page not found. The page you're looking for doesn't exist or has been moved. Navigate back to Deepanshu Malik's portfolio.">
-    <meta name="keywords" content="404, Page Not Found, Error Page">
-    <meta name="author" content="Deepanshu Malik">
-    <meta name="theme-color" content="#1a1a2e">
-    <meta name="robots" content="noindex, nofollow">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="manifest" href="assets/images/site.webmanifest">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://deepanshu-malik.github.io/404.html">
-    <meta property="og:title" content="404 - Page Not Found | Deepanshu Malik">
-    <meta property="og:description" content="Page not found. Navigate back to Deepanshu Malik's portfolio.">
-    <meta property="og:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://deepanshu-malik.github.io/404.html">
-    <meta property="twitter:title" content="404 - Page Not Found | Deepanshu Malik">
-    <meta property="twitter:description" content="Page not found. Navigate back to Deepanshu Malik's portfolio.">
-    <meta property="twitter:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-primary: #1a1a2e;
-            --bg-secondary: #16162a;
-            --bg-card: #1e1e3f;
-            --text-primary: #ffffff;
-            --text-secondary: #abb2bf;
-            --text-muted: #607b96;
-            --accent: #c778dd;
-            --border: #3d3d5c;
-            --border-light: #2d2d4a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Fira Code', monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 32px;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .logo-icon {
-            color: var(--accent);
-            font-size: 24px;
-        }
-
-        .error-code {
-            font-size: clamp(6rem, 20vw, 10rem);
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 24px;
-            text-shadow: 0 0 40px rgba(199, 120, 221, 0.3);
-        }
-
-        .error-title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .error-message {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-            line-height: 1.8;
-        }
-
-        .terminal {
-            background: #0d1117;
-            border: 1px solid var(--border);
-            text-align: left;
-            margin: 32px auto;
-            max-width: 500px;
-            overflow: hidden;
-        }
-
-        .terminal-header {
-            background: #161b22;
-            padding: 8px 12px;
-            display: flex;
-            gap: 6px;
-        }
-
-        .terminal-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .terminal-dot.red { background: #ff5f56; }
-        .terminal-dot.yellow { background: #ffbd2e; }
-        .terminal-dot.green { background: #27ca40; }
-
-        .terminal-body {
-            padding: 20px;
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        .terminal-line {
-            margin-bottom: 4px;
-        }
-
-        .terminal-prompt { color: #7ee787; }
-        .terminal-error { color: #ff7b72; }
-        .terminal-comment { color: #8b949e; }
-        .terminal-string { color: #a5d6ff; }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.2s;
-            background: transparent;
-            font-family: inherit;
-            margin-top: 16px;
-        }
-
-        .btn:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-
-        .links {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-        }
-
-        .link {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .link:hover {
-            color: var(--text-primary);
-        }
-
-        .link .hash {
-            color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            padding: 32px 0;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .footer-name {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .footer-title {
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-social a {
-            color: var(--text-secondary);
-            transition: color 0.2s;
-            text-decoration: none;
-        }
-
-        .footer-social a:hover {
-            color: var(--text-primary);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 24px;
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        /* Background grid */
-        .bg-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(rgba(199, 120, 221, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(199, 120, 221, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-            .links {
-                gap: 16px;
-            }
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — no handler for this route | Deepanshu Malik</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <style>
+    @font-face {
+      font-family: 'Bricolage Grotesque';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('/assets/fonts/bricolage-var.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'IBM Plex Mono';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('/assets/fonts/plex-mono-500.woff2') format('woff2');
+    }
+    :root {
+      --bg0: #191410; --panel: #281f16; --line: #3d3225; --text: #ede2ce;
+      --muted: #a3907a; --faint: #6f6152; --copper: #d4772b; --err: #c96f5e;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg0: #f2e9da; --panel: #fbf5ea; --line: #d8c9b0; --text: #271e12;
+        --muted: #7a6a55; --faint: #9b8a71; --copper: #b05e17; --err: #b0523f;
+      }
+    }
+    :root[data-theme='dark'] {
+      --bg0: #191410; --panel: #281f16; --line: #3d3225; --text: #ede2ce;
+      --muted: #a3907a; --faint: #6f6152; --copper: #d4772b; --err: #c96f5e;
+    }
+    :root[data-theme='light'] {
+      --bg0: #f2e9da; --panel: #fbf5ea; --line: #d8c9b0; --text: #271e12;
+      --muted: #7a6a55; --faint: #9b8a71; --copper: #b05e17; --err: #b0523f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      background: var(--bg0); color: var(--text);
+      min-height: 100svh; display: grid; place-items: center; padding: 24px;
+    }
+    .box { max-width: 560px; }
+    .mono {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+    }
+    h1 { font-size: clamp(2.4rem, 8vw, 4.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin: 14px 0 18px; }
+    h1 span { color: var(--err); }
+    p { color: var(--muted); margin-bottom: 28px; }
+    .log {
+      font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;
+      background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--err);
+      border-radius: 3px; padding: 14px 16px; margin-bottom: 28px; color: var(--muted);
+      line-height: 1.8; overflow-x: auto; white-space: nowrap;
+    }
+    .log b { color: var(--err); font-weight: 500; }
+    .log i { color: var(--copper); font-style: normal; }
+    a.btn {
+      display: inline-block; padding: 12px 22px; background: var(--copper);
+      color: var(--bg0); text-decoration: none; border-radius: 3px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
-    <!-- Background Grid -->
-    <div class="bg-grid"></div>
-
-    <div class="main-content">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-icon">⬡</span>
-                <span>Deepanshu Malik</span>
-            </div>
-
-            <div class="error-code">404</div>
-            <h1 class="error-title">Page Not Found</h1>
-            <p class="error-message">
-                The page you're looking for doesn't exist or has been moved.
-            </p>
-
-            <div class="terminal">
-                <div class="terminal-header">
-                    <span class="terminal-dot red"></span>
-                    <span class="terminal-dot yellow"></span>
-                    <span class="terminal-dot green"></span>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line"><span class="terminal-prompt">$</span> cd /your-path</div>
-                    <div class="terminal-line"><span class="terminal-error">Error:</span> <span class="terminal-string">No such file or directory</span></div>
-                    <div class="terminal-line"><span class="terminal-comment"># This route doesn't exist</span></div>
-                    <div class="terminal-line"><span class="terminal-prompt">$</span> cd /</div>
-                    <div class="terminal-line"><span class="terminal-comment"># Redirecting to home...</span></div>
-                </div>
-            </div>
-
-            <a href="/" class="btn">
-                ← Back to Home
-            </a>
-
-            <div class="links">
-                <a href="index.html" class="link"><span class="hash">#</span>home</a>
-                <a href="projects.html" class="link"><span class="hash">#</span>projects</a>
-                <a href="about.html" class="link"><span class="hash">#</span>about-me</a>
-                <a href="index.html#contact" class="link"><span class="hash">#</span>contacts</a>
-                <a href="resume.html" class="link"><span class="hash">#</span>resume</a>
-            </div>
-        </div>
+  <main class="box">
+    <p class="mono">deepanshu.system · router</p>
+    <h1><span>404</span> — no handler for this route.</h1>
+    <div class="log">
+      <b>ERR</b> route not matched · intent unresolved<br>
+      <i>→</i> message moved to dead-letter queue<br>
+      <i>→</i> retry with a known-good route: <i>/</i>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-inner">
-                <div class="footer-info">
-                    <div class="footer-name">
-                        <span class="logo-icon" style="color: var(--accent);">⬡</span>
-                        <span>Deepanshu Malik</span>
-                        <span style="color: var(--text-muted);">builds.with.deepanshu@gmail.com</span>
-                    </div>
-                    <span class="footer-title">Senior Backend Engineer & GenAI Developer</span>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/deepanshu-malik">GitHub</a>
-                    <a href="https://linkedin.com/in/builds-with-deepanshu">LinkedIn</a>
-                </div>
-            </div>
-            <p class="copyright">© Copyright 2025. Made by Deepanshu</p>
-        </div>
-    </footer>
+    <p>The pipeline has no node registered at this address. Everything that exists routes from the homepage.</p>
+    <a class="btn" href="/">← back to intake</a>
+  </main>
+  <script>
+    const t = localStorage.getItem('theme')
+    if (t) document.documentElement.dataset.theme = t
+  </script>
 </body>
 </html>

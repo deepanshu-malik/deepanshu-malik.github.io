@@ -1,1299 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="googlefee395028f1a5397.html" />
-    <title>Deepanshu Malik | Senior Backend Engineer & GenAI Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepanshu Malik — AI Practice Lead | Production GenAI Systems</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Backend Engineer with 4+ years building production systems in fintech. Expert in Python, FastAPI, Kubernetes, and GenAI. CKA certified. Building scalable microservices and LLM-powered applications.">
-    <meta name="keywords" content="Backend Engineer, Python Developer, FastAPI, Kubernetes, GenAI, LLM, Microservices, AWS, Senior Software Engineer, Deepanshu Malik">
-    <meta name="author" content="Deepanshu Malik">
-    <meta name="theme-color" content="#1a1a2e">
-    <link rel="canonical" href="https://deepanshu-malik.github.io/">
+  <meta name="description" content="AI Practice Lead setting the AI engineering direction at a regulated fintech — production agents, RAG at scale, and org-wide AI adoption. Python, FastAPI, AWS, Kubernetes (CKA certified).">
+  <meta name="keywords" content="AI Practice Lead, GenAI Engineer, Production AI Agents, RAG, LangGraph, Python, FastAPI, Kubernetes, AWS, Deepanshu Malik">
+  <meta name="author" content="Deepanshu Malik">
+  <meta name="theme-color" content="#191410">
+  <link rel="canonical" href="https://deepanshu-malik.github.io/">
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="manifest" href="assets/images/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://deepanshu-malik.github.io/">
-    <meta property="og:title" content="Deepanshu Malik | Senior Backend Engineer & GenAI Developer">
-    <meta property="og:description" content="Senior Backend Engineer with 4+ years building production systems in fintech. Expert in Python, FastAPI, Kubernetes, and GenAI.">
-    <meta property="og:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deepanshu-malik.github.io/">
+  <meta property="og:title" content="Deepanshu Malik — AI Practice Lead | Production GenAI Systems">
+  <meta property="og:description" content="Production agents, RAG at scale, and the AI engineering standards a fintech organisation builds on. Python · FastAPI · AWS · Kubernetes (CKA).">
+  <meta property="og:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://deepanshu-malik.github.io/">
-    <meta property="twitter:title" content="Deepanshu Malik | Senior Backend Engineer & GenAI Developer">
-    <meta property="twitter:description" content="Senior Backend Engineer with 4+ years building production systems in fintech. Expert in Python, FastAPI, Kubernetes, and GenAI.">
-    <meta property="twitter:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://deepanshu-malik.github.io/">
+  <meta property="twitter:title" content="Deepanshu Malik — AI Practice Lead | Production GenAI Systems">
+  <meta property="twitter:description" content="Production agents, RAG at scale, and the AI engineering standards a fintech organisation builds on.">
+  <meta property="twitter:image" content="https://deepanshu-malik.github.io/assets/images/og-image.png">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <link rel="preload" href="/assets/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Deepanshu Malik",
-      "url": "https://deepanshu-malik.github.io",
-      "image": "https://deepanshu-malik.github.io/assets/images/og-image.png",
-      "sameAs": [
-        "https://github.com/deepanshu-malik",
-        "https://linkedin.com/in/builds-with-deepanshu"
-      ],
-      "jobTitle": "Senior Backend Engineer & GenAI Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "KOGTA Financial"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Deepanshu Malik",
+    "url": "https://deepanshu-malik.github.io",
+    "image": "https://deepanshu-malik.github.io/assets/images/og-image.png",
+    "sameAs": [
+      "https://github.com/deepanshu-malik",
+      "https://linkedin.com/in/builds-with-deepanshu"
+    ],
+    "jobTitle": "AI Practice Lead",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kogta Financial (India) Limited"
+    },
+    "description": "AI Practice Lead setting the AI engineering direction at a regulated fintech — production agents, RAG systems, and org-wide AI adoption. CKA certified.",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Deenbandhu Chhotu Ram University of Science & Technology"
       },
-      "description": "Senior Backend Engineer with 4+ years building production systems in fintech. Expert in Python, FastAPI, Kubernetes, and GenAI.",
-      "alumniOf": {
-        "@type": "Organization",
-        "name": "IIIT Delhi"
-      },
-      "knowsAbout": [
-        "Python",
-        "FastAPI",
-        "Kubernetes",
-        "AWS",
-        "GenAI",
-        "LangChain",
-        "Microservices",
-        "Docker",
-        "MongoDB",
-        "RAG Pipelines"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN",
-        "addressLocality": "India"
-      },
-      "email": "builds.with.deepanshu@gmail.com"
-    }
-    </script>
-
-    <style>
-        :root {
-            --bg-primary: #1a1a2e;
-            --bg-secondary: #16162a;
-            --bg-card: #1e1e3f;
-            --text-primary: #ffffff;
-            --text-secondary: #abb2bf;
-            --text-muted: #607b96;
-            --accent: #c778dd;
-            --accent-secondary: #98c379;
-            --border: #3d3d5c;
-            --border-light: #2d2d4a;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Fira Code', monospace;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 14px;
-        }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Decorative dots */
-        .dots {
-            display: grid;
-            grid-template-columns: repeat(5, 4px);
-            gap: 8px;
-        }
-        .dots span {
-            width: 4px;
-            height: 4px;
-            background: var(--text-muted);
-            border-radius: 50%;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-primary);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 100;
-            padding: 16px 0;
-        }
-        
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .logo-icon {
-            color: var(--accent);
-        }
-        
-        .nav-links { display: flex; gap: 24px; align-items: center; }
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
-        .nav-links a .hash { color: var(--accent); }
-        
-        /* Section titles */
-        .section-title {
-            font-size: 28px;
-            font-weight: 500;
-            margin-bottom: 48px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .section-title .hash { color: var(--accent); }
-        .section-title::after {
-            content: '';
-            flex: 1;
-            max-width: 300px;
-            height: 1px;
-            background: var(--accent);
-            opacity: 0.5;
-        }
-        
-        /* Hero */
-        section { padding: 100px 0; }
-        
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-        
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .hero h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            line-height: 1.3;
-        }
-        
-        .hero h1 .highlight { color: var(--accent); }
-        
-        .hero p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-size: 15px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.2s;
-            background: transparent;
-            cursor: pointer;
-            font-family: inherit;
-        }
-        .btn:hover { background: var(--accent); color: var(--bg-primary); }
-        
-        .hero-image {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        
-        .status-badge {
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-        }
-        .status-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        /* Tech Stack */
-        .tech-stack {
-            display: flex;
-            gap: 12px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .tech-stack-label {
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-        .tech-icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
-            opacity: 0.7;
-        }
-        .tech-icon:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-        .tech-icon img {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Terminal */
-        .terminal {
-            background: #0d1117;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-family: 'Fira Code', monospace;
-            font-size: 13px;
-            overflow: hidden;
-            width: 100%;
-            max-width: 420px;
-        }
-        .terminal-header {
-            background: #161b22;
-            padding: 8px 12px;
-            display: flex;
-            gap: 6px;
-        }
-        .terminal-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        .terminal-dot.red { background: #ff5f56; }
-        .terminal-dot.yellow { background: #ffbd2e; }
-        .terminal-dot.green { background: #27ca40; }
-        .terminal-body {
-            padding: 16px;
-            line-height: 1.6;
-        }
-        .terminal-line {
-            margin-bottom: 4px;
-        }
-        .terminal-prompt { color: #7ee787; }
-        .terminal-cmd { color: #e6edf3; }
-        .terminal-comment { color: #8b949e; }
-        .terminal-string { color: #a5d6ff; }
-        .terminal-keyword { color: #ff7b72; }
-        .typing-cursor {
-            display: inline-block;
-            width: 8px;
-            height: 14px;
-            background: var(--accent);
-            animation: blink 1s infinite;
-            vertical-align: middle;
-            margin-left: 2px;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
-        /* Experience Timeline */
-        .experience-timeline {
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid var(--border);
-        }
-        .exp-item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-        .exp-item:last-child { margin-bottom: 0; }
-        .exp-item::before {
-            content: '';
-            position: absolute;
-            left: -29px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 4px;
-        }
-        .exp-title { font-size: 16px; font-weight: 600; }
-        .exp-company { color: var(--accent); }
-        .exp-date { color: var(--text-muted); font-size: 13px; }
-        .exp-highlight { color: var(--text-secondary); font-size: 14px; margin-top: 8px; }
-        .exp-highlight strong { color: var(--text-primary); }
-
-        /* Quote Carousel */
-        .quote-section {
-            padding: 60px 0;
-            overflow: hidden;
-        }
-        
-        .quotes-track {
-            display: flex;
-            animation: scroll-quotes 40s linear infinite;
-            width: max-content;
-        }
-        
-        .quotes-track:hover {
-            animation-play-state: paused;
-        }
-        
-        .quote-box {
-            border: 1px solid var(--border);
-            padding: 24px 32px;
-            position: relative;
-            min-width: 500px;
-            max-width: 500px;
-            margin: 0 24px;
-            flex-shrink: 0;
-        }
-        
-        .quote-text {
-            font-size: 18px;
-            text-align: center;
-            margin-bottom: 12px;
-            font-style: italic;
-        }
-        
-        .quote-author {
-            text-align: right;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-        
-        @keyframes scroll-quotes {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        /* Projects */
-        .projects-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-        
-        .view-all {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .view-all:hover { color: var(--accent); }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-        
-        .project-card {
-            border: 1px solid var(--border);
-            background: var(--bg-secondary);
-        }
-        
-        .project-image {
-            height: 150px;
-            background: var(--bg-card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-        }
-        
-        .project-image img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        
-        .project-tech {
-            padding: 8px 12px;
-            font-size: 12px;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .project-content {
-            padding: 16px;
-        }
-        
-        .project-content h3 {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-        
-        .project-content p {
-            color: var(--text-secondary);
-            font-size: 13px;
-            margin-bottom: 16px;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .project-link {
-            padding: 6px 12px;
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.2s;
-        }
-        .project-link:hover { border-color: var(--accent); color: var(--accent); }
-        
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        
-        .skills-decoration {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        
-        .skills-table {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid var(--border);
-        }
-        
-        .skill-cell {
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-        }
-        
-        .skill-cell h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-        
-        .skill-cell p {
-            font-size: 13px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        
-        /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .about-content h3 {
-            font-size: 18px;
-            margin-bottom: 24px;
-        }
-        
-        .about-content p {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 14px;
-        }
-        
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        
-        .contact-box {
-            border: 1px solid var(--border);
-            padding: 24px;
-        }
-        
-        .contact-box h3 {
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-        .contact-item:hover { color: var(--text-primary); }
-        
-        /* Footer */
-        footer {
-            padding: 32px 0;
-            border-top: 1px solid var(--border-light);
-        }
-        
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        
-        .footer-name {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .footer-title {
-            color: var(--text-secondary);
-            font-size: 13px;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .footer-social a {
-            color: var(--text-secondary);
-            transition: color 0.2s;
-        }
-        .footer-social a:hover { color: var(--text-primary); }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 24px;
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-grid, .about-grid, .contact-grid, .skills-grid { grid-template-columns: 1fr; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-table { grid-template-columns: 1fr; }
-        }
-
-        /* Chat Modal */
-        .chat-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 200;
-            align-items: center;
-            justify-content: center;
-        }
-        .chat-modal.open { display: flex; }
-        
-        .chat-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        
-        .chat-container {
-            position: relative;
-            width: 90%;
-            max-width: 800px;
-            height: 85vh;
-            max-height: 650px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .chat-header {
-            padding: 16px 24px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .chat-title {
-            font-size: 16px;
-            color: var(--text-primary);
-        }
-        .chat-title .hash { color: var(--accent); }
-        
-        .chat-close {
-            width: 32px;
-            height: 32px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--text-secondary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            transition: all 0.2s;
-        }
-        .chat-close:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 24px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
-        }
-        .chat-messages::-webkit-scrollbar { width: 6px; }
-        .chat-messages::-webkit-scrollbar-track { background: transparent; }
-        .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-        
-        .chat-message { margin-bottom: 20px; }
-        .chat-message.user { text-align: right; }
-        .chat-message.user .bubble {
-            display: inline-block;
-            background: var(--bg-card);
-            border: 1px solid var(--accent);
-            padding: 12px 16px;
-            color: var(--text-primary);
-            max-width: 80%;
-            text-align: left;
-        }
-        
-        .chat-message.bot {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            padding: 12px 0;
-        }
-        .chat-message.bot p { margin-bottom: 12px; }
-        .chat-message.bot p:only-child { margin-bottom: 0; }
-        .chat-message.bot p:last-child { margin-bottom: 0; }
-        .chat-message.bot > *:first-child { margin-top: 0; }
-        .chat-message.bot h2, .chat-message.bot h3 {
-            color: var(--text-primary);
-            margin: 20px 0 12px;
-            font-weight: 500;
-        }
-        .chat-message.bot h2 { font-size: 18px; }
-        .chat-message.bot h3 { font-size: 16px; }
-        .chat-message.bot ul, .chat-message.bot ol { margin: 12px 0 12px 20px; }
-        .chat-message.bot li { margin-bottom: 8px; }
-        .chat-message.bot strong { color: var(--accent); }
-        .chat-message.bot code {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 2px 6px;
-            font-size: 13px;
-        }
-        .chat-message.bot pre {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            padding: 16px;
-            overflow-x: auto;
-            margin: 12px 0;
-        }
-        .chat-message.bot pre code { background: none; border: none; padding: 0; }
-        
-        .chat-welcome {
-            color: var(--text-secondary);
-            padding: 20px;
-            border: 1px dashed var(--border);
-            margin-bottom: 20px;
-        }
-        .chat-welcome strong { color: var(--accent); }
-        
-        .chat-input-area {
-            padding: 16px 24px 24px;
-            border-top: 1px solid var(--border);
-        }
-        
-        .chat-input-wrapper {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .chat-input {
-            flex: 1;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 12px 16px;
-            font-family: inherit;
-            font-size: 14px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .chat-input:focus { border-color: var(--accent); }
-        .chat-input::placeholder { color: var(--text-muted); }
-        
-        .chat-send {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--text-primary);
-            padding: 12px 20px;
-            font-family: inherit;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .chat-send:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-        }
-        
-        .chat-hint {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-        
-        .typing-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 14px;
-            background: var(--accent);
-            margin-left: 2px;
-            animation: blink 1s infinite;
-            vertical-align: text-bottom;
-        }
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-    </style>
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Maharshi Dayanand University"
+      }
+    ],
+    "knowsAbout": [
+      "AI Agents",
+      "LangGraph",
+      "RAG Pipelines",
+      "Python",
+      "FastAPI",
+      "Kubernetes",
+      "AWS",
+      "GenAI",
+      "Software Solution Architecture",
+      "Microservices"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certified Kubernetes Administrator",
+      "credentialCategory": "Professional Certification"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN",
+      "addressLocality": "Gurugram"
+    },
+    "email": "builds.with.deepanshu@gmail.com"
+  }
+  </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-inner">
-            <a href="#" class="logo">
-                <span class="logo-icon">⬡</span>
-                <span>Deepanshu Malik</span>
-            </a>
-            <div class="nav-links">
-                <a href="#home" class="active"><span class="hash">#</span>home</a>
-                <a href="#projects"><span class="hash">#</span>projects</a>
-                <a href="#about"><span class="hash">#</span>about-me</a>
-                <a href="#contact"><span class="hash">#</span>contacts</a>
-                <a href="resume.html"><span class="hash">#</span>resume</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>Deepanshu is a <span class="highlight">Backend Engineer</span> and <span class="highlight">GenAI Developer</span></h1>
-                    <p>He builds cloud-native microservices and LLM-powered applications with Python, FastAPI, and Kubernetes</p>
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <button class="btn" onclick="openChat()">Chat with AI →</button>
-                        <a href="resume.html" class="btn">Resume →</a>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-stack-label">Tech Stack |</span>
-                        <div class="tech-icon" title="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
-                        <div class="tech-icon" title="FastAPI"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"></div>
-                        <div class="tech-icon" title="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></div>
-                        <div class="tech-icon" title="Kubernetes"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"></div>
-                        <div class="tech-icon" title="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div>
-                        <div class="tech-icon" title="OpenAI"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" alt="OpenAI" style="filter: invert(1);"></div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                        </div>
-                        <div class="terminal-body">
-                            <div class="terminal-line"><span class="terminal-comment"># Building RAG pipeline</span></div>
-                            <div class="terminal-line"><span class="terminal-keyword">from</span> <span class="terminal-cmd">langchain</span> <span class="terminal-keyword">import</span> <span class="terminal-cmd">ChatOpenAI</span></div>
-                            <div class="terminal-line"><span class="terminal-keyword">from</span> <span class="terminal-cmd">chromadb</span> <span class="terminal-keyword">import</span> <span class="terminal-cmd">Client</span></div>
-                            <div class="terminal-line"></div>
-                            <div class="terminal-line"><span class="terminal-cmd">llm</span> = <span class="terminal-cmd">ChatOpenAI</span>(<span class="terminal-string">"gpt-4o-mini"</span>)</div>
-                            <div class="terminal-line"><span class="terminal-cmd">db</span> = <span class="terminal-cmd">Client</span>().<span class="terminal-cmd">get_collection</span>()</div>
-                            <div class="terminal-line"></div>
-                            <div class="terminal-line"><span class="terminal-prompt">>>> </span><span class="terminal-cmd">response</span> = <span class="terminal-cmd">rag_query</span>(<span class="terminal-string">"skills"</span>)<span class="typing-cursor"></span></div>
-                        </div>
-                    </div>
-                    <div class="status-badge">
-                        <span class="dot"></span>
-                        Currently working on <strong style="color: var(--accent);">GenAI Projects</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- ——— Nav ——— -->
+  <header class="site-nav" id="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#intake">
+        <span class="node-square" aria-hidden="true"></span>
+        <span>deepanshu malik</span>
+        <span class="mono">/ ai practice lead</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#profile">profile</a>
+        <a href="#log">deploy-log</a>
+        <a href="#services">services</a>
+        <a href="#stack">stack</a>
+        <a href="#dispatch">contact</a>
+        <a href="/resume.html">resume</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="palette-btn" title="Command palette (Ctrl+K)" aria-label="Open command palette">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h12"/></svg>
+        </button>
+        <button class="icon-btn" id="theme-btn" title="Toggle theme" aria-label="Toggle color theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ——— NODE 01 · INTAKE (hero) ——— -->
+    <section class="hero container" id="intake">
+      <div class="hero-eyebrow">
+        <span class="rule" aria-hidden="true"></span>
+        <span class="mono">Deepanshu Malik · AI Practice Lead · Gurugram, IN</span>
+      </div>
+      <h1><span id="h1-text">I ship AI systems that survive production.</span><span class="caret" id="h1-caret" aria-hidden="true"></span></h1>
+      <p class="hero-sub">Setting the AI engineering direction at a regulated fintech — <strong>production agents</strong>, <strong>RAG at scale</strong>, and the standards an organisation builds on. Python · FastAPI · AWS · Kubernetes <span class="accent">(CKA)</span>.</p>
+      <div class="hero-ctas">
+        <button class="btn btn--primary" data-open-agent>Talk to the agent ↗</button>
+        <a class="btn" href="/resume.html">Resume</a>
+      </div>
+      <div class="hero-chips">
+        <span class="chip"><span class="dot dot--pulse" aria-hidden="true"></span>system: operational</span>
+        <span class="chip">docs dispatched <strong data-count="10000" data-suffix="+/mo">0</strong></span>
+        <span class="chip">delivery <strong data-count="99.9" data-decimals="1" data-suffix="%">0</strong></span>
+        <span class="chip">queries <strong>8s → 2s</strong></span>
+      </div>
+      <div class="hero-pipeline">
+        <canvas id="pipeline-canvas" aria-label="Animated diagram: a request flowing through intake, classify, retrieve, orchestrate and dispatch stages" role="img"></canvas>
+      </div>
     </section>
 
-    <!-- Quote -->
-    <section class="quote-section">
-        <div class="quotes-track">
-            <div class="quote-box">
-                <p class="quote-text">"Readability counts."</p>
-                <p class="quote-author">- The Zen of Python</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"Simple is better than complex."</p>
-                <p class="quote-author">- The Zen of Python</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"Code is read more often than it is written."</p>
-                <p class="quote-author">- Guido van Rossum</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"The best code is no code at all."</p>
-                <p class="quote-author">- Jeff Atwood</p>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="quote-box">
-                <p class="quote-text">"Readability counts."</p>
-                <p class="quote-author">- The Zen of Python</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"Simple is better than complex."</p>
-                <p class="quote-author">- The Zen of Python</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"Code is read more often than it is written."</p>
-                <p class="quote-author">- Guido van Rossum</p>
-            </div>
-            <div class="quote-box">
-                <p class="quote-text">"The best code is no code at all."</p>
-                <p class="quote-author">- Jeff Atwood</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <div class="container">
-            <div class="projects-header">
-                <h2 class="section-title"><span class="hash">#</span>projects</h2>
-                <a href="projects.html" class="view-all">View all →</a>
-            </div>
-            <div class="projects-grid" id="projects-grid"></div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" style="background: var(--bg-secondary);">
-        <div class="container">
-            <h2 class="section-title"><span class="hash">#</span>skills</h2>
-            <div class="skills-grid">
-                <div class="skills-decoration">
-                    <div class="dots">
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                </div>
-                <div class="skills-table">
-                    <div class="skill-cell">
-                        <h4>Languages</h4>
-                        <p>Python<br>JavaScript<br>SQL</p>
-                    </div>
-                    <div class="skill-cell">
-                        <h4>Databases</h4>
-                        <p>MongoDB<br>MySQL<br>OpenSearch<br>Redis</p>
-                    </div>
-                    <div class="skill-cell">
-                        <h4>Tools</h4>
-                        <p>Docker<br>Kubernetes<br>Jenkins<br>Git</p>
-                    </div>
-                    <div class="skill-cell">
-                        <h4>Frameworks</h4>
-                        <p>FastAPI<br>Flask<br>Django<br>LangChain</p>
-                    </div>
-                    <div class="skill-cell">
-                        <h4>Cloud</h4>
-                        <p>AWS EKS<br>AWS SQS<br>AWS S3<br>Helm</p>
-                    </div>
-                    <div class="skill-cell">
-                        <h4>GenAI</h4>
-                        <p>OpenAI API<br>RAG Pipelines<br>ChromaDB<br>Embeddings</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-        <div class="container">
-            <div class="projects-header">
-                <h2 class="section-title"><span class="hash">#</span>experience</h2>
-                <a href="resume.html" class="view-all">View full resume →</a>
-            </div>
-            <div class="experience-timeline">
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div>
-                            <span class="exp-title">Senior Software Engineer</span>
-                            <span class="exp-company"> @ KOGTA Financial</span>
-                        </div>
-                        <span class="exp-date">Mar 2025 - Present</span>
-                    </div>
-                    <p class="exp-highlight">Built <strong>5+ microservices</strong> and multi-channel communication platform handling WhatsApp, SMS, RCS at scale</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div>
-                            <span class="exp-title">Software Developer</span>
-                            <span class="exp-company"> @ Capri Global Capital</span>
-                        </div>
-                        <span class="exp-date">Jul 2024 - Mar 2025</span>
-                    </div>
-                    <p class="exp-highlight">Revamped loan APIs achieving <strong>25% throughput increase</strong> for 15K+ daily requests</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div>
-                            <span class="exp-title">Member of Technical Staff</span>
-                            <span class="exp-company"> @ VoerEir AB</span>
-                        </div>
-                        <span class="exp-date">May 2022 - Mar 2024</span>
-                    </div>
-                    <p class="exp-highlight">Developed Python scripts for <strong>Kubernetes monitoring</strong> and Flask APIs for telecom cloud testing</p>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div>
-                            <span class="exp-title">Software Developer</span>
-                            <span class="exp-company"> @ TradeIndia.com</span>
-                        </div>
-                        <span class="exp-date">Apr 2021 - May 2022</span>
-                    </div>
-                    <p class="exp-highlight">Built RESTful APIs and Elasticsearch queries achieving <strong>95% code coverage</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" style="background: var(--bg-secondary);">
-        <div class="container">
-            <h2 class="section-title"><span class="hash">#</span>about-me</h2>
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>Hello, I'm Deepanshu!</h3>
-                    <p>I'm a Senior Backend Engineer based in India with 4+ years of experience building production systems in fintech.</p>
-                    <p>Currently at Kogta Financial, I architect microservices from scratch and lead backend development. I'm also a CKA (Certified Kubernetes Administrator).</p>
-                    <p>Transforming complex requirements into scalable backend solutions has been my passion. I'm currently exploring GenAI and building LLM-powered applications.</p>
-                <a href="about.html" class="btn" style="margin-top: 16px;">Read more →</a>
-                </div>
-                <div class="hero-image">
-                    <div class="dots" style="position: absolute; top: 20px; right: 20px;">
-                        <span></span><span></span><span></span><span></span><span></span>
-                        <span></span><span></span><span></span><span></span><span></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title"><span class="hash">#</span>contacts</h2>
-            <div class="contact-grid">
-                <div>
-                    <p style="color: var(--text-secondary); max-width: 400px;">I'm interested in GenAI tooling, backend infrastructure, and fintech projects. Feel free to reach out!</p>
-                </div>
-                <div class="contact-box">
-                    <h3>Message me here</h3>
-                    <a href="mailto:builds.with.deepanshu@gmail.com" class="contact-item">
-                        <span>✉</span> builds.with.deepanshu@gmail.com
-                    </a>
-                    <a href="https://linkedin.com/in/builds-with-deepanshu" class="contact-item">
-                        <span>in</span> LinkedIn
-                    </a>
-                    <a href="https://github.com/deepanshu-malik" class="contact-item">
-                        <span>⌘</span> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-info">
-                    <div class="footer-name">
-                        <span class="logo-icon" style="color: var(--accent);">⬡</span>
-                        <span>Deepanshu Malik</span>
-                        <span style="color: var(--text-muted);">builds.with.deepanshu@gmail.com</span>
-                    </div>
-                    <span class="footer-title">Senior Backend Engineer & GenAI Developer</span>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/deepanshu-malik">GitHub</a>
-                    <a href="https://linkedin.com/in/builds-with-deepanshu">LinkedIn</a>
-                </div>
-            </div>
-            <p class="copyright">© Copyright 2025. Made by Deepanshu</p>
-        </div>
-    </footer>
-
-    <!-- Chat Modal -->
-    <div id="chat-modal" class="chat-modal">
-        <div class="chat-overlay" onclick="closeChat()"></div>
-        <div class="chat-container">
-            <div class="chat-header">
-                <span class="chat-title"><span class="hash">#</span>ask-me-anything</span>
-                <button class="chat-close" onclick="closeChat()">×</button>
-            </div>
-            <div id="chat-messages" class="chat-messages">
-                <div class="chat-welcome">
-                    <strong>Hi!</strong> I'm Deepanshu (AI-powered). Feel free to ask me about my projects, skills, and experience.
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <form id="chat-form" class="chat-input-wrapper">
-                    <input type="text" id="chat-input" class="chat-input" placeholder="Type your question..." autocomplete="off">
-                    <button type="submit" class="chat-send">Send →</button>
-                </form>
-                <p class="chat-hint">Press <strong>Enter</strong> to send</p>
-            </div>
-        </div>
+    <!-- ——— Telemetry ticker ——— -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker-track">
+        <span>in production since <b>2021</b></span>
+        <span>welcome letters <b>10,000+/mo</b></span>
+        <span>opensearch p95 <b>8s → 2s</b></span>
+        <span>loan api throughput <b>+25%</b> @ 15k req/day</span>
+        <span>etl runtime <b>60min → 15min</b></span>
+        <span>message delivery <b>99.9%</b></span>
+        <span>test coverage <b>95%</b></span>
+        <span>cka <b>certified</b></span>
+        <span>ai adoption <b>org-wide</b></span>
+        <span>deploy time <b>−40%</b></span>
+      </div>
     </div>
 
-    <script>
-        const API_URL = window.location.hostname === 'localhost' 
-            ? 'http://localhost:8000/api' 
-            : 'https://portfolio-backend-deepanshu-malik.koyeb.app/api';
-        
-        let sessionId = `s_${Date.now()}`;
-        let isLoading = false;
+    <!-- ——— NODE 02 · CLASSIFY (profile) ——— -->
+    <section class="section" id="profile">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="node-tag"><span class="node-square" aria-hidden="true"></span><span class="mono">node 02 · classify</span></span>
+          <h2>Who routes your hardest problems.</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="lede">I lead the AI practice at Kogta Financial — a regulated NBFC — where I set the engineering direction for AI, ship production agents, and carry delivery end-to-end with direct accountability to the CTO.</p>
+            <p>I treat <strong>LLMs as infrastructure, not experiments</strong>. My latest system is a RAG backend with intent classification, hybrid retrieval, LLM reranking and streaming responses — built under real-world constraints of latency, cost and accuracy.</p>
+            <p>That works because of backend fundamentals: <strong>queues, retries, async IO, modular pipelines</strong>. Before leading the practice, I built production microservices from scratch — a multi-channel communication platform (WhatsApp, SMS, RCS) processing high-volume traffic daily, and an automated system dispatching 10,000+ loan welcome letters monthly.</p>
+            <p>Beyond shipping, I move the organisation: running <strong>knowledge-sharing sessions across teams</strong>, guiding engineers to embed AI into production problems and daily workflows. I'm a Certified Kubernetes Administrator — I believe you should understand the entire ecosystem your code runs in.</p>
+          </div>
+          <div class="fact-list reveal">
+            <div class="fact"><span class="fact-num" data-count="5" data-suffix="+">0</span><span class="mono">years in production</span></div>
+            <div class="fact"><span class="fact-num" data-count="10" data-suffix="+">0</span><span class="mono">services owned end-to-end</span></div>
+            <div class="fact"><span class="fact-num">CKA</span><span class="mono">certified kubernetes administrator</span></div>
+            <div class="fact"><span class="fact-num" data-count="9" data-suffix="">0</span><span class="mono">engineers mentored</span></div>
+            <div class="fact"><span class="fact-num">CTO</span><span class="mono">direct accountability</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Load projects from JSON
-        fetch('data/projects-data.json')
-            .then(r => r.json())
-            .then(data => {
-                const grid = document.getElementById('projects-grid');
-                if (grid) {
-                    grid.innerHTML = data.projects.slice(0, 3).map(p => `
-                        <div class="project-card">
-                            <div class="project-image" style="background: ${p.gradient};">
-                                ${p.icon}
-                            </div>
-                            <div class="project-tech">${p.tech.slice(0, 4).join(' ')}</div>
-                            <div class="project-content">
-                                <h3>${p.title}</h3>
-                                <p>${p.shortDesc}</p>
-                                <div class="project-links">
-                                    ${p.live ? `<a href="javascript:void(0)" onclick="openChat()" class="project-link">Live ↗</a>` : ''}
-                                    ${p.github ? `<a href="${p.github}" target="_blank" class="project-link">GitHub ↗</a>` : ''}
-                                    ${!p.live && !p.github ? `<a href="projects.html#${p.id}" class="project-link">Details ↗</a>` : ''}
-                                </div>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            });
+    <!-- ——— NODE 03 · RETRIEVE (deploy log / experience) ——— -->
+    <section class="section section--band" id="log">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="node-tag"><span class="node-square" aria-hidden="true"></span><span class="mono">node 03 · retrieve</span></span>
+          <h2>Deployment log, 2021 → now.</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <div class="deploy-log">
+          <article class="deploy deploy--current reveal">
+            <div class="deploy-tag"><div class="ver">v2026.04</div><div class="dates">Apr 2026 — present</div></div>
+            <div class="deploy-rail"><span class="node-square" aria-hidden="true"></span></div>
+            <div class="deploy-body">
+              <span class="mobile-dates">Apr 2026 — present</span>
+              <h3>AI Practice Lead <span class="org">@ Kogta Financial</span></h3>
+              <p class="deploy-context">regulated NBFC · gurugram · reports to CTO</p>
+              <ul class="deploy-notes">
+                <li>Architecting and deploying <b>production AI agents</b> that eliminate manual effort across business functions — owning delivery from design through production.</li>
+                <li><b>Sole technical authority</b> for company-wide AI decisions: LLM selection, orchestration frameworks, architectural patterns, and the engineering standards the org builds on.</li>
+                <li>Driving AI adoption beyond direct management — org-wide knowledge-sharing sessions building hands-on AI engineering capability.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="deploy reveal">
+            <div class="deploy-tag"><div class="ver">v2025.03</div><div class="dates">Mar 2025 — Mar 2026</div></div>
+            <div class="deploy-rail"><span class="node-square" aria-hidden="true"></span></div>
+            <div class="deploy-body">
+              <span class="mobile-dates">Mar 2025 — Mar 2026</span>
+              <h3>Senior Software Engineer <span class="org">@ Kogta Financial</span></h3>
+              <p class="deploy-context">fintech · fastapi · mongodb · mysql · eks</p>
+              <ul class="deploy-notes">
+                <li>Owned end-to-end design and production readiness of <b>5+ microservices</b>, working directly with the CTO and CPO.</li>
+                <li>Automated Loan Welcome Letters — FastAPI, SQS, multiprocessing — dispatching <b>10,000+ letters monthly</b> on EKS with Jenkins/GitLab CI.</li>
+                <li>Optimised OpenSearch queries from <b>8s to 2s (−75%)</b>; built multi-DB workflows across RedShift and MySQL.</li>
+                <li>Mentored <b>4 junior engineers</b>, cutting onboarding time by 30%.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="deploy reveal">
+            <div class="deploy-tag"><div class="ver">v2024.07</div><div class="dates">Jul 2024 — Mar 2025</div></div>
+            <div class="deploy-rail"><span class="node-square" aria-hidden="true"></span></div>
+            <div class="deploy-body">
+              <span class="mobile-dates">Jul 2024 — Mar 2025</span>
+              <h3>Software Developer <span class="org">@ Capri Global Capital</span></h3>
+              <p class="deploy-context">listed NBFC · ₹27,000+ cr AUM</p>
+              <ul class="deploy-notes">
+                <li>Revamped loan APIs with FastAPI + asyncio — <b>+25% throughput</b> on 15,000+ daily requests.</li>
+                <li>Cut ETL runtime from <b>1 hour to 15 minutes</b> via multiprocessing; deployment time <b>−40%</b> with Docker + Jenkins CI/CD.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="deploy reveal">
+            <div class="deploy-tag"><div class="ver">v2022.05</div><div class="dates">May 2022 — Mar 2024</div></div>
+            <div class="deploy-rail"><span class="node-square" aria-hidden="true"></span></div>
+            <div class="deploy-body">
+              <span class="mobile-dates">May 2022 — Mar 2024</span>
+              <h3>Member of Technical Staff <span class="org">@ VoerEir AB</span></h3>
+              <p class="deploy-context">swedish telecom · NFV/5G cloud testing</p>
+              <ul class="deploy-notes">
+                <li>Built Python tooling for <b>Kubernetes monitoring</b> and Flask APIs for real-time data access; deployment times <b>−30%</b>.</li>
+                <li>Mentored a team of <b>5 junior engineers</b>.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="deploy reveal">
+            <div class="deploy-tag"><div class="ver">v2021.04</div><div class="dates">Apr 2021 — May 2022</div></div>
+            <div class="deploy-rail"><span class="node-square" aria-hidden="true"></span></div>
+            <div class="deploy-body">
+              <span class="mobile-dates">Apr 2021 — May 2022</span>
+              <h3>Software Developer <span class="org">@ TradeIndia.com</span></h3>
+              <p class="deploy-context">india's largest B2B marketplace · 10M+ users</p>
+              <ul class="deploy-notes">
+                <li>Built RESTful APIs and Elasticsearch indices — response times <b>+30%</b>, search accuracy up.</li>
+                <li>Automated testing with Python/Django — <b>95% coverage</b>, bugs −20%.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        // Check if we should open chat (from projects page)
-        document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('openChat')) {
-                localStorage.removeItem('openChat');
-                setTimeout(() => openChat(), 300);
-            }
-        });
+    <!-- ——— NODE 04 · ORCHESTRATE (services / projects) ——— -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="node-tag"><span class="node-square" aria-hidden="true"></span><span class="mono">node 04 · orchestrate</span></span>
+          <h2>Services in production.</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- rendered from /data/projects-data.json -->
+        </div>
+      </div>
+    </section>
 
-        function openChat() {
-            document.getElementById('chat-modal').classList.add('open');
-            document.getElementById('chat-input').focus();
-        }
-        
-        function closeChat() {
-            document.getElementById('chat-modal').classList.remove('open');
-        }
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeChat();
-        });
+    <!-- ——— NODE 05 · STACK ——— -->
+    <section class="section section--band" id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="node-tag"><span class="node-square" aria-hidden="true"></span><span class="mono">node 05 · stack</span></span>
+          <h2>The layers I operate.</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <div class="stack-layers reveal">
+          <div class="stack-layer">
+            <h3>Agents &amp; Orchestration</h3>
+            <span class="mono">LangGraph · LangChain · AI agents · prompt &amp; context engineering · framework evaluation</span>
+          </div>
+          <div class="stack-layer">
+            <h3>Models &amp; Retrieval</h3>
+            <span class="mono">OpenAI API · RAG pipelines · hybrid retrieval · LLM reranking · ChromaDB · embeddings · evaluation</span>
+          </div>
+          <div class="stack-layer">
+            <h3>Interfaces</h3>
+            <span class="mono">FastAPI · REST · SSE streaming · Flask · Django</span>
+          </div>
+          <div class="stack-layer">
+            <h3>Services &amp; Reliability</h3>
+            <span class="mono">Python · asyncio · SQS queues · retries &amp; idempotency · multiprocessing · microservices · TDD</span>
+          </div>
+          <div class="stack-layer">
+            <h3>Data</h3>
+            <span class="mono">MongoDB · MySQL · PostgreSQL · OpenSearch · Elasticsearch · Redis · RedShift</span>
+          </div>
+          <div class="stack-layer">
+            <h3>Infrastructure</h3>
+            <span class="mono">AWS (EKS · SQS · S3 · Lambda) · Kubernetes (CKA) · Docker · Helm · Jenkins · GitLab CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        document.getElementById('chat-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            if (isLoading) return;
-            
-            const input = document.getElementById('chat-input');
-            const message = input.value.trim();
-            if (!message) return;
-            
-            input.value = '';
-            addMessage(message, 'user');
-            
-            isLoading = true;
-            const botDiv = createBotMessage();
-            
-            try {
-                const response = await fetch(`${API_URL}/chat/v2/stream`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message, session_id: sessionId })
-                });
+    <!-- ——— NODE 06 · DISPATCH (contact) ——— -->
+    <section class="section" id="dispatch">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="node-tag"><span class="node-square" aria-hidden="true"></span><span class="mono">node 06 · dispatch</span></span>
+          <h2>Route a message to me.</h2>
+          <div class="rule" aria-hidden="true"></div>
+        </div>
+        <div class="contact-wrap reveal">
+          <p>Open to conversations about production GenAI, agent infrastructure, and AI direction in fintech. Messages are processed with at-least-once delivery.</p>
+          <div class="contact-actions">
+            <a class="btn btn--primary" id="dispatch-email" href="mailto:builds.with.deepanshu@gmail.com">builds.with.deepanshu@gmail.com</a>
+            <a class="btn" href="https://linkedin.com/in/builds-with-deepanshu" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/deepanshu-malik" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-                let fullText = '';
-                let buffer = '';
+  <!-- ——— Footer ——— -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="mono">© 2026 deepanshu malik · designed &amp; engineered by hand · powered by a real RAG backend</span>
+      <div class="footer-links">
+        <a href="https://github.com/deepanshu-malik/deepanshu-malik.github.io" target="_blank" rel="noopener">source</a>
+        <a href="/resume.html">resume</a>
+        <a href="#intake">top ↑</a>
+      </div>
+    </div>
+  </footer>
 
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
+  <!-- ——— Agent dock + drawer ——— -->
+  <button class="agent-dock" id="agent-dock" data-open-agent aria-haspopup="dialog">
+    <span class="dot dot--pulse" aria-hidden="true"></span>
+    talk to the agent
+  </button>
 
-                    buffer += decoder.decode(value, { stream: true });
-                    const lines = buffer.split('\n');
-                    buffer = lines.pop() || '';
+  <aside class="agent-drawer" id="agent-drawer" role="dialog" aria-modal="true" aria-label="AI agent chat">
+    <div class="agent-head">
+      <span class="agent-id"><span class="dot" id="agent-dot" aria-hidden="true"></span>deepanshu.agent — rag/v2</span>
+      <span class="agent-status" id="agent-status">intent → retrieve → rerank → stream</span>
+      <button class="icon-btn" id="agent-close" aria-label="Close agent panel">✕</button>
+    </div>
+    <div class="agent-log" id="agent-log">
+      <div class="agent-welcome">
+        <b>deepanshu.agent</b> online — a production RAG pipeline answering as me: intent classification, hybrid retrieval, LLM reranking, streamed responses. Ask about my work; watch the pipeline run.
+      </div>
+      <div class="quick-prompts" id="quick-prompts">
+        <button data-q="What does an AI Practice Lead actually do at Kogta?">what do you lead at kogta?</button>
+        <button data-q="Tell me about the RAG system behind this chat.">how does this chat work?</button>
+        <button data-q="What production systems have you built?">what have you shipped?</button>
+      </div>
+    </div>
+    <form class="agent-input-row" id="agent-form">
+      <input class="agent-input" id="agent-input" type="text" placeholder="ask the pipeline…" autocomplete="off" aria-label="Message the agent">
+      <button class="btn btn--primary" type="submit">send</button>
+    </form>
+  </aside>
 
-                    for (const line of lines) {
-                        if (line.startsWith('data: ')) {
-                            const data = line.slice(6);
-                            if (data === '[DONE]') continue;
-                            fullText += data;
-                            botDiv.innerHTML = parseMarkdown(fullText) + '<span class="typing-cursor"></span>';
-                            scrollChat();
-                        }
-                    }
-                }
-                
-                botDiv.innerHTML = parseMarkdown(fullText);
-                
-            } catch (error) {
-                botDiv.textContent = 'Sorry, something went wrong. Please try again.';
-            } finally {
-                isLoading = false;
-                scrollChat();
-            }
-        });
+  <!-- ——— Command palette ——— -->
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-box">
+      <input class="palette-input" id="palette-input" type="text" placeholder="type a command…" autocomplete="off" aria-label="Search commands">
+      <ul class="palette-list" id="palette-list">
+        <li data-cmd="goto:#profile"><span>go to profile</span><span class="mono">node 02</span></li>
+        <li data-cmd="goto:#log"><span>go to deploy-log</span><span class="mono">node 03</span></li>
+        <li data-cmd="goto:#services"><span>go to services</span><span class="mono">node 04</span></li>
+        <li data-cmd="goto:#stack"><span>go to stack</span><span class="mono">node 05</span></li>
+        <li data-cmd="goto:#dispatch"><span>go to contact</span><span class="mono">node 06</span></li>
+        <li data-cmd="agent"><span>talk to the agent</span><span class="mono">rag/v2</span></li>
+        <li data-cmd="theme"><span>toggle theme</span><span class="mono">dark/light</span></li>
+        <li data-cmd="resume"><span>open resume</span><span class="mono">pdf-ready</span></li>
+        <li data-cmd="loadtest"><span>run load-test</span><span class="mono">⚠ floods the pipeline</span></li>
+      </ul>
+    </div>
+  </div>
 
-        function addMessage(text, type) {
-            const container = document.getElementById('chat-messages');
-            const div = document.createElement('div');
-            div.className = `chat-message ${type}`;
-            if (type === 'user') {
-                div.innerHTML = `<span class="bubble">${escapeHtml(text)}</span>`;
-            } else {
-                div.innerHTML = parseMarkdown(text);
-            }
-            container.appendChild(div);
-            scrollChat();
-        }
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-        function createBotMessage() {
-            const container = document.getElementById('chat-messages');
-            const div = document.createElement('div');
-            div.className = 'chat-message bot';
-            div.innerHTML = '<span class="typing-cursor"></span>';
-            container.appendChild(div);
-            scrollChat();
-            return div;
-        }
-
-        function scrollChat() {
-            const container = document.getElementById('chat-messages');
-            container.scrollTop = container.scrollHeight;
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        // Configure marked for markdown parsing
-        if (typeof marked !== 'undefined') {
-            marked.setOptions({ breaks: true, gfm: true });
-        }
-        
-        function parseMarkdown(text) {
-            // Pre-process: add newline before ### if missing
-            text = text.replace(/([^\n])###/g, '$1\n\n###');
-            text = text.replace(/([^\n])##/g, '$1\n\n##');
-            
-            if (typeof marked !== 'undefined' && marked.parse) {
-                try {
-                    return marked.parse(text);
-                } catch(e) {
-                    console.error('Marked parse error:', e);
-                }
-            }
-            // Fallback: basic markdown conversion
-            return text
-                .replace(/### (.+)/g, '<h3>$1</h3>')
-                .replace(/## (.+)/g, '<h2>$1</h2>')
-                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                .replace(/^- (.+)$/gm, '<li>$1</li>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/\n/g, '<br>')
-                .replace(/^/, '<p>')
-                .replace(/$/, '</p>');
-        }
-    </script>
-
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

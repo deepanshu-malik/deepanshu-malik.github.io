@@ -1,12 +1,12 @@
 {
   "meta": {
-    "version": "1.0.1",
-    "lastUpdated": "2026-01-08",
+    "version": "2.0.0",
+    "lastUpdated": "2026-07-05",
     "language": "en-GB"
   },
   "personal": {
     "name": "Deepanshu Malik",
-    "title": "Senior Backend Engineer",
+    "title": "AI Practice Lead",
     "email": "builds.with.deepanshu@gmail.com",
     "phone": "+91 7015771984",
     "location": "India",
@@ -24,19 +24,19 @@
       "display": "deepanshu-malik.github.io"
     }
   },
-  "summary": "Senior Backend Engineer with 4+ years building cloud-native microservices in fintech. Core expertise in <strong>Python</strong>, <strong>FastAPI</strong>, and <strong>AWS</strong>, with focus on maintainable, well-tested systems. <strong>CKA certified</strong> with hands-on Kubernetes experience. Currently building <strong>RAG pipelines</strong> and LLM-powered tools. Proven track record of optimising performance, mentoring developers, and delivering high-impact solutions.",
+  "summary": "AI Practice Lead setting the AI engineering direction at a regulated fintech — shipping production agents, defining the stack, and driving org-wide AI adoption. 5+ years building cloud-native systems with <strong>Python</strong>, <strong>FastAPI</strong>, and <strong>AWS</strong>. <strong>CKA certified</strong> with production Kubernetes experience. Recently shipped a production RAG backend with intent classification, hybrid retrieval, LLM reranking, and streaming responses — treating LLMs as infrastructure, not experiments.",
   "skills": [
+    {
+      "category": "GenAI & Agents",
+      "items": "AI Agents, LangGraph, LangChain, RAG Pipelines, OpenAI API, Hybrid Retrieval, LLM Reranking, ChromaDB, Prompt Engineering, LLM/Framework Evaluation"
+    },
     {
       "category": "Languages",
       "items": "Python, SQL, JavaScript, Bash"
     },
     {
       "category": "Frameworks",
-      "items": "FastAPI, Flask, Django, LangChain"
-    },
-    {
-      "category": "GenAI & LLMs",
-      "items": "OpenAI API, RAG Pipelines, ChromaDB, Prompt Engineering, Vector Databases"
+      "items": "FastAPI, Flask, Django"
     },
     {
       "category": "Databases",
@@ -44,20 +44,34 @@
     },
     {
       "category": "Cloud & DevOps",
-      "items": "AWS (EKS, SQS, S3, Lambda), Kubernetes, Docker, Helm, Jenkins, GitLab CI/CD"
+      "items": "AWS (EKS, SQS, S3, Lambda), Kubernetes (CKA), Docker, Helm, Jenkins, GitLab CI/CD"
     },
     {
       "category": "Practices",
-      "items": "Microservices, REST APIs, Async Programming, TDD, Agile/Scrum"
+      "items": "Software Solution Architecture, Microservices, REST APIs, Async Programming, TDD, Mentoring"
     }
   ],
   "experience": [
+    {
+      "title": "AI Practice Lead",
+      "company": "KOGTA Financial (India) Limited",
+      "companyContext": "Retail-focused NBFC with 25+ years in asset finance, serving SME/MSME segment",
+      "startDate": "Apr 2026",
+      "endDate": "Present",
+      "location": "Gurugram, India",
+      "type": "Hybrid",
+      "achievements": [
+        "Architecting and deploying <strong>production AI agents</strong> that eliminate manual effort across business functions — owning end-to-end delivery from design through production, with direct accountability to the CTO",
+        "<strong>Sole technical authority</strong> for company-wide AI decisions — evaluating and selecting LLM models, orchestration frameworks, and architectural patterns; defining the AI engineering standards the organisation builds on",
+        "Driving AI adoption across teams outside direct management — running knowledge-sharing sessions on AI engineering concepts, best practices, and tooling integration to build hands-on capability across the organisation"
+      ]
+    },
     {
       "title": "Senior Software Engineer",
       "company": "KOGTA Financial (India) Limited",
       "companyContext": "Retail-focused NBFC with 25+ years in asset finance, serving SME/MSME segment",
       "startDate": "Mar 2025",
-      "endDate": "Present",
+      "endDate": "Mar 2026",
       "location": "Gurugram, India",
       "type": "Hybrid",
       "achievements": [

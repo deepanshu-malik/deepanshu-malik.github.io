@@ -1,0 +1,102 @@
+/* ————————————————————————————————————————————
+   Warm Engineered — design tokens
+   Dark: ops room at night (default)
+   Light: drafting paper
+   ———————————————————————————————————————————— */
+
+:root {
+  --bg0: #191410;
+  --bg1: #211a13;
+  --panel: #281f16;
+  --panel-hi: #2f2519;
+  --line: #3d3225;
+  --line-soft: #2e251a;
+  --text: #ede2ce;
+  --muted: #a3907a;
+  --faint: #6f6152;
+  --copper: #d4772b;
+  --copper-hi: #e99a55;
+  --copper-dim: rgba(212, 119, 43, 0.14);
+  --ok: #8cb271;
+  --err: #c96f5e;
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
+
+  --font-display: 'Bricolage Grotesque', 'Avenir Next', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.85rem);
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+  --step-3: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
+  --step-4: clamp(2.9rem, 2.2rem + 3.6vw, 5rem);
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 7rem;
+
+  --container: 1120px;
+  --radius: 3px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.5, 1);
+  --dur-1: 200ms;
+  --dur-2: 420ms;
+  --dur-3: 650ms;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg0: #f2e9da;
+    --bg1: #f7f0e3;
+    --panel: #fbf5ea;
+    --panel-hi: #fffaf1;
+    --line: #d8c9b0;
+    --line-soft: #e4d8c2;
+    --text: #271e12;
+    --muted: #7a6a55;
+    --copper: #b05e17;
+    --copper-hi: #93490c;
+    --copper-dim: rgba(176, 94, 23, 0.12);
+    --ok: #5e8a47;
+    --err: #b0523f;
+    --shadow: 0 24px 60px -28px rgba(80, 60, 30, 0.35);
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg0: #191410;
+  --bg1: #211a13;
+  --panel: #281f16;
+  --panel-hi: #2f2519;
+  --line: #3d3225;
+  --line-soft: #2e251a;
+  --text: #ede2ce;
+  --muted: #a3907a;
+  --copper: #d4772b;
+  --copper-hi: #e99a55;
+  --copper-dim: rgba(212, 119, 43, 0.14);
+  --ok: #8cb271;
+  --err: #c96f5e;
+  --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.55);
+}
+
+:root[data-theme='light'] {
+  --bg0: #f2e9da;
+  --bg1: #f7f0e3;
+  --panel: #fbf5ea;
+  --panel-hi: #fffaf1;
+  --line: #d8c9b0;
+  --line-soft: #e4d8c2;
+  --text: #271e12;
+  --muted: #7a6a55;
+  --copper: #b05e17;
+  --copper-hi: #93490c;
+  --copper-dim: rgba(176, 94, 23, 0.12);
+  --ok: #5e8a47;
+  --err: #b0523f;
+  --shadow: 0 24px 60px -28px rgba(80, 60, 30, 0.35);
+}

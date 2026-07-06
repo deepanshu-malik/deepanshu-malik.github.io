@@ -2,9 +2,12 @@
   "name": "deepanshu-malik.github.io",
   "version": "1.0.0",
   "description": "Personal portfolio website with a terminal/monospace aesthetic and integrated AI chat assistant. Built with vanilla HTML, CSS, and JavaScript using a JSON-driven architecture.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-og": "node scripts/generate-og.mjs"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,11 @@
   },
   "homepage": "https://github.com/deepanshu-malik/deepanshu-malik.github.io#readme",
   "dependencies": {
+    "lenis": "^1.1.14"
+  },
+  "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",
-    "satori": "^0.18.3"
+    "satori": "^0.18.3",
+    "vite": "^5.4.8"
   }
 }
