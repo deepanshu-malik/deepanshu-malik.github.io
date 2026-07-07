@@ -356,7 +356,7 @@
       <span class="agent-status" id="agent-status">intent → retrieve → compress → stream</span>
       <button class="icon-btn" id="agent-close" aria-label="Close agent panel">✕</button>
     </div>
-    <div class="agent-log" id="agent-log">
+    <div class="agent-log" id="agent-log" data-lenis-prevent>
       <div class="agent-welcome">
         <b>deepanshu.agent</b> online — a production RAG pipeline answering as me: intent classification, hybrid retrieval, LLM reranking, streamed responses. Ask about my work; watch the pipeline run.
       </div>
@@ -376,7 +376,7 @@
   <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
     <div class="palette-box">
       <input class="palette-input" id="palette-input" type="text" placeholder="type a command…" autocomplete="off" aria-label="Search commands">
-      <ul class="palette-list" id="palette-list">
+      <ul class="palette-list" id="palette-list" data-lenis-prevent>
         <li data-cmd="goto:#profile"><span>go to profile</span><span class="mono">node 02</span></li>
         <li data-cmd="goto:#log"><span>go to deploy-log</span><span class="mono">node 03</span></li>
         <li data-cmd="goto:#services"><span>go to services</span><span class="mono">node 04</span></li>
