@@ -1,8 +1,7 @@
 /*
  * Agent workspace — drawer UI over the real RAG backend.
- * Shows a visible tool-call trace per query, synced to the
- * actual SSE lifecycle (stage splits are estimated client-side
- * until the backend emits stage events).
+ * The tool-call trace is driven by real `event: stage` SSE events
+ * emitted by the pipeline, with true per-stage latencies.
  */
 
 const API_URL =
@@ -10,16 +9,12 @@ const API_URL =
     ? 'http://localhost:8000/api'
     : 'https://portfolio-backend-deepanshu-malik.koyeb.app/api'
 
-const TRACE_STEPS = [
-  'classify_intent(query)',
-  'hybrid_retrieve(k=12)',
-  'rerank(top=4)',
-  'stream_response()',
-]
-
 /* minimal markdown: escape first, then transform */
 function md(text) {
   let s = text
+    // SSE framing drops newlines inside chunks; restore breaks before headings/bullets
+    .replace(/([^\n])(#{2,3} )/g, '$1\n\n$2')
+    .replace(/([^\n])(- \*\*)/g, '$1\n$2')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -27,7 +22,7 @@ function md(text) {
   const codeBlocks = []
   s = s.replace(/```(\w*)\n?([\s\S]*?)```/g, (_, lang, code) => {
     codeBlocks.push(`<pre><code>${code}</code></pre>`)
-    return ' \u00a7CB' + (codeBlocks.length - 1) + '\u00a7 '
+    return ' §CB' + (codeBlocks.length - 1) + '§ '
   })
 
   s = s
@@ -57,7 +52,7 @@ function md(text) {
     )
     .join('')
 
-  return s.replace(/ \u00a7CB(\d+)\u00a7 /g, (_, i) => codeBlocks[+i])
+  return s.replace(/ §CB(\d+)§ /g, (_, i) => codeBlocks[+i])
 }
 
 export function initAgent() {
@@ -99,29 +94,51 @@ export function initAgent() {
     scroll()
   }
 
+  /* trace rows are created from real backend stage events */
   function addTrace() {
     const wrap = document.createElement('div')
     wrap.className = 'trace'
-    const rows = TRACE_STEPS.map((name) => {
+    log.appendChild(wrap)
+    const rows = new Map()
+
+    function makeRow(stage) {
       const row = document.createElement('div')
       row.className = 'trace-step'
       row.innerHTML = `<span class="t-state">·</span><span class="t-name"></span><span class="t-ms"></span>`
-      row.querySelector('.t-name').textContent = name
+      row.querySelector('.t-name').textContent = `${stage}()`
       wrap.appendChild(row)
+      rows.set(stage, row)
       return row
-    })
-    log.appendChild(wrap)
-    scroll()
+    }
+
     return {
-      run(i) {
-        rows[i].classList.add('is-running')
-        rows[i].querySelector('.t-state').textContent = '◆'
+      onEvent(p) {
+        if (!p || !p.stage) return
+        const row = rows.get(p.stage) || makeRow(p.stage)
+        if (p.status === 'start') {
+          row.classList.add('is-running')
+          row.querySelector('.t-state').textContent = '◆'
+        } else {
+          row.classList.remove('is-running')
+          row.classList.add('is-done')
+          row.querySelector('.t-state').textContent =
+            p.status === 'blocked' ? '✕' : '✓'
+          if (p.detail)
+            row.querySelector('.t-name').textContent = `${p.stage}(${p.detail})`
+          if (p.ms != null)
+            row.querySelector('.t-ms').textContent = `${Math.round(p.ms)} ms`
+        }
+        scroll()
       },
-      done(i, ms) {
-        rows[i].classList.remove('is-running')
-        rows[i].classList.add('is-done')
-        rows[i].querySelector('.t-state').textContent = '✓'
-        if (ms != null) rows[i].querySelector('.t-ms').textContent = `${ms} ms`
+      finish() {
+        for (const row of rows.values()) {
+          if (row.classList.contains('is-running')) {
+            row.classList.remove('is-running')
+            row.classList.add('is-done')
+            row.querySelector('.t-state').textContent = '✓'
+          }
+        }
+        if (rows.size === 0) wrap.remove()
       },
     }
   }
@@ -154,8 +171,6 @@ export function initAgent() {
     addUser(message)
     const trace = addTrace()
     const msgEl = addAgentMsg()
-    const t0 = performance.now()
-    trace.run(0)
 
     const coldTimer = setTimeout(() => {
       dot.classList.add('is-warming')
@@ -163,7 +178,7 @@ export function initAgent() {
     }, 4000)
 
     try {
-      const res = await fetch(`${API_URL}/chat/v2/stream`, {
+      const res = await fetch(`${API_URL}/chat/stream`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message, session_id: sessionId }),
@@ -174,40 +189,46 @@ export function initAgent() {
       const decoder = new TextDecoder()
       let full = ''
       let buffer = ''
-      let firstByte = 0
+      let gotFirstByte = false
+      let currentEvent = 'message'
 
       for (;;) {
         const { done, value } = await reader.read()
         if (done) break
-        if (!firstByte) {
-          firstByte = Math.round(performance.now() - t0)
+        if (!gotFirstByte) {
+          gotFirstByte = true
           clearTimeout(coldTimer)
           dot.classList.remove('is-warming')
           status.textContent = defaultStatus
-          // apportion the real time-to-first-byte across the stages
-          trace.done(0, Math.round(firstByte * 0.3))
-          trace.run(1)
-          trace.done(1, Math.round(firstByte * 0.45))
-          trace.run(2)
-          trace.done(2, Math.round(firstByte * 0.25))
-          trace.run(3)
         }
         buffer += decoder.decode(value, { stream: true })
         const lines = buffer.split('\n')
         buffer = lines.pop() || ''
         for (const line of lines) {
-          if (line.startsWith('data: ')) {
+          if (line.startsWith('event: ')) {
+            currentEvent = line.slice(7).trim()
+          } else if (line.startsWith('data: ')) {
             const data = line.slice(6)
-            if (data === '[DONE]') continue
-            full += data
-            msgEl.innerHTML = md(full) + '<span class="caret"></span>'
-            scroll()
+            if (currentEvent === 'stage') {
+              try {
+                trace.onEvent(JSON.parse(data))
+              } catch {
+                /* malformed stage event — ignore */
+              }
+            } else if (data !== '[DONE]') {
+              full += data
+              msgEl.innerHTML = md(full) + '<span class="caret"></span>'
+              scroll()
+            }
+          } else if (line === '') {
+            currentEvent = 'message'
           }
         }
       }
       msgEl.innerHTML = md(full)
-      trace.done(3, Math.round(performance.now() - t0 - firstByte))
+      trace.finish()
     } catch (err) {
+      trace.finish()
       msgEl.className = 'msg msg--error'
       msgEl.textContent = `✕ pipeline error — ${err.message}. The backend may be waking up; try again in a few seconds.`
     } finally {
